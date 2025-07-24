@@ -169,6 +169,10 @@
                     @endauth
 
                     <li class="nav-item">
+                        <a class="nav-link {{ request()->is('potensi*') ? 'active' : '' }}"
+                            href="{{ url('potensi') }}">Potensi Desa</a>
+                    </li>
+                    <li class="nav-item">
                         <a class="nav-link {{ request()->is('kontak*') ? 'active' : '' }}"
                             href="{{ url('kontak') }}">Kontak</a>
                     </li>

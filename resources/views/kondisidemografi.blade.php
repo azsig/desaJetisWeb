@@ -2,167 +2,222 @@
 
 @section('title', 'Kondisi Demografi Desa Jetis')
 
+<style>
+    /* Animations */
+    @keyframes fadeIn {
+        from { opacity: 0; }
+        to { opacity: 1; }
+    }
+
+    @keyframes slideInUp {
+        from { transform: translateY(20px); opacity: 0; }
+        to { transform: translateY(0); opacity: 1; }
+    }
+
+    .animate-fadeIn {
+        animation: fadeIn 1s ease-out;
+    }
+
+    .animate-slideInUp {
+        animation: slideInUp 0.8s ease-out;
+    }
+
+    /* Gradient Colors */
+    .bg-gradient-success {
+        background: linear-gradient(135deg, #0d5e1f 0%, #1a9e3f 100%);
+    }
+
+    /* Card Styles */
+    .card {
+        border-radius: 10px;
+        overflow: hidden;
+        border: none;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+        transition: all 0.3s ease;
+    }
+
+    .card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 10px 25px rgba(13, 94, 31, 0.15);
+    }
+
+    .card-header {
+        font-size: 1.25rem;
+        background: linear-gradient(135deg, #0d5e1f 0%, #1a9e3f 100%);
+    }
+
+    /* Chart Container */
+    .chart-container {
+        position: relative;
+        margin: 0 auto;
+        width: 100%;
+        background: linear-gradient(135deg, rgba(13, 94, 31, 0.05) 0%, rgba(26, 158, 63, 0.05) 100%);
+        border-radius: 8px;
+        padding: 15px;
+        transition: all 0.3s ease;
+    }
+
+    .chart-container:hover {
+        box-shadow: 0 5px 15px rgba(13, 94, 31, 0.1);
+    }
+
+    /* Alert Styles */
+    .alert-warning {
+        background-color: rgba(255, 193, 7, 0.1);
+        border-color: rgba(255, 193, 7, 0.3);
+        color: #856404;
+    }
+
+    /* Responsive Adjustments */
+    @media (max-width: 768px) {
+        .card-body {
+            padding: 1.5rem !important;
+        }
+
+        .chart-container {
+            padding: 10px;
+        }
+    }
+</style>
+
 @section('content')
-    <div class="container py-4">
-        <!-- Bagian Data RW/RT -->
-        <div class="row mb-4">
-            <!-- Card Statistik Gender -->
-            <div class="col-md-6">
-                <div class="card h-100">
-                    <div class="card-header" style="background-color: #198754;">
-                        <h4 class="mb-0 text-white">Statistik Gender Penduduk</h4>
+    <div class="py-5 bg-light">
+        <div class="container-fluid px-5">
+            <!-- Hero Section -->
+            <section class="py-4 text-center animate-fadeIn">
+                <div class="row justify-content-center">
+                    <div class="col-lg-10">
+                        <h1 class="fw-bold mb-3 display-5" style="color: #0d5e1f;">Kondisi Demografi Desa Jetis</h1>
+                        <p class="fw-bold lead" style="color: #1a9e3f;">Data Kependudukan dan Statistik Demografis</p>
+                        <div class="border-bottom border-success border-2 mx-auto" style="width: 100px; background: linear-gradient(135deg, #0d5e1f 0%, #1a9e3f 100%);"></div>
                     </div>
-                    <div class="card-body">
-                        @if (count($dataRw) > 0)
-                            <div class="chart-container" style="height: 250px;">
-                                <canvas id="genderChart"></canvas>
-                            </div>
-                        @else
-                            <div class="alert alert-warning">
-                                Tidak ada data gender yang tersedia.
-                            </div>
-                        @endif
+                </div>
+            </section>
+
+            <!-- Bagian Data RW/RT -->
+            <div class="row mb-4 mt-5">
+                <!-- Card Statistik Gender -->
+                <div class="col-md-6 mb-4 animate-slideInUp">
+                    <div class="card h-100">
+                        <div class="card-header text-white py-3">
+                            <h4 class="mb-0 fw-bold"><i class="fas fa-venus-mars me-2"></i>Statistik Gender Penduduk</h4>
+                        </div>
+                        <div class="card-body">
+                            @if (count($dataRw) > 0)
+                                <div class="chart-container" style="height: 250px;">
+                                    <canvas id="genderChart"></canvas>
+                                </div>
+                            @else
+                                <div class="alert alert-warning">
+                                    <i class="fas fa-exclamation-circle me-2"></i>Tidak ada data gender yang tersedia.
+                                </div>
+                            @endif
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Card Distribusi RW -->
+                <div class="col-md-6 mb-4 animate-slideInUp" style="animation-delay: 0.2s;">
+                    <div class="card h-100">
+                        <div class="card-header text-white py-3">
+                            <h4 class="mb-0 fw-bold"><i class="fas fa-map-marked-alt me-2"></i>Distribusi Penduduk per RW</h4>
+                        </div>
+                        <div class="card-body">
+                            @if (count($dataRw) > 0)
+                                <div class="chart-container" style="height: 250px;">
+                                    <canvas id="rwChart"></canvas>
+                                </div>
+                            @else
+                                <div class="alert alert-warning">
+                                    <i class="fas fa-exclamation-circle me-2"></i>Tidak ada data RW yang tersedia.
+                                </div>
+                            @endif
+                        </div>
                     </div>
                 </div>
             </div>
 
-            <!-- Card Distribusi RW -->
-            <div class="col-md-6">
-                <div class="card h-100">
-                    <div class="card-header" style="background-color: #198754;">
-                        <h4 class="mb-0 text-white">Distribusi Penduduk per RW</h4>
+            <!-- Bagian Data Pendidikan dan Pekerjaan -->
+            <div class="row mb-4">
+                <div class="col-md-6 mb-4 animate-slideInUp" style="animation-delay: 0.4s;">
+                    <div class="card h-100">
+                        <div class="card-header text-white py-3">
+                            <h4 class="mb-0 fw-bold"><i class="fas fa-graduation-cap me-2"></i>Data Penduduk Berdasarkan Pendidikan</h4>
+                        </div>
+                        <div class="card-body">
+                            @if (count($dataPendidikan) > 0)
+                                <div class="chart-container" style="height: 300px;">
+                                    <canvas id="pendidikanChart"></canvas>
+                                </div>
+                            @else
+                                <div class="alert alert-warning">
+                                    <i class="fas fa-exclamation-circle me-2"></i>Tidak ada data pendidikan yang tersedia.
+                                </div>
+                            @endif
+                        </div>
                     </div>
-                    <div class="card-body">
-                        @if (count($dataRw) > 0)
-                            <div class="chart-container" style="height: 250px;">
-                                <canvas id="rwChart"></canvas>
-                            </div>
-                        @else
-                            <div class="alert alert-warning">
-                                Tidak ada data RW yang tersedia.
-                            </div>
-                        @endif
+                </div>
+                <div class="col-md-6 mb-4 animate-slideInUp" style="animation-delay: 0.6s;">
+                    <div class="card h-100">
+                        <div class="card-header text-white py-3">
+                            <h4 class="mb-0 fw-bold"><i class="fas fa-briefcase me-2"></i>Data Penduduk Berdasarkan Pekerjaan</h4>
+                        </div>
+                        <div class="card-body">
+                            @if (count($dataPekerjaan) > 0)
+                                <div class="chart-container" style="height: 300px;">
+                                    <canvas id="pekerjaanChart"></canvas>
+                                </div>
+                            @else
+                                <div class="alert alert-warning">
+                                    <i class="fas fa-exclamation-circle me-2"></i>Tidak ada data pekerjaan yang tersedia.
+                                </div>
+                            @endif
+                        </div>
                     </div>
                 </div>
             </div>
-        </div>
 
-        <!-- Bagian Data Pendidikan dan Pekerjaan -->
-        <div class="row mb-4">
-            <div class="col-md-6">
-                <div class="card h-100">
-                    <div class="card-header" style="background-color: #198754;">
-                        <h4 class="mb-0 text-white">Data Penduduk Berdasarkan Pendidikan</h4>
-                    </div>
-                    <div class="card-body">
-                        @if (count($dataPendidikan) > 0)
-                            <div class="chart-container" style="height: 300px;">
-                                <canvas id="pendidikanChart"></canvas>
-                            </div>
-                        @else
-                            <div class="alert alert-warning">
-                                Tidak ada data pendidikan yang tersedia.
-                            </div>
-                        @endif
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-6">
-                <div class="card h-100">
-                    <div class="card-header" style="background-color: #198754;">
-                        <h4 class="mb-0 text-white">Data Penduduk Berdasarkan Pekerjaan</h4>
-                    </div>
-                    <div class="card-body">
-                        @if (count($dataPekerjaan) > 0)
-                            <div class="chart-container" style="height: 300px;">
-                                <canvas id="pekerjaanChart"></canvas>
-                            </div>
-                        @else
-                            <div class="alert alert-warning">
-                                Tidak ada data pekerjaan yang tersedia.
-                            </div>
-                        @endif
+            <!-- Bagian Data Usia -->
+            <div class="row mb-4">
+                <div class="col-md-6 mb-4 animate-slideInUp" style="animation-delay: 0.8s;">
+                    <div class="card h-100">
+                        <div class="card-header text-white py-3">
+                            <h4 class="mb-0 fw-bold"><i class="fas fa-chart-bar me-2"></i>Distribusi Gender per Usia</h4>
+                        </div>
+                        <div class="card-body">
+                            @if (count($dataUsia) > 0)
+                                <div class="chart-container" style="height: 320px;">
+                                    <canvas id="genderUsiaChart"></canvas>
+                                </div>
+                            @else
+                                <div class="alert alert-warning">
+                                    <i class="fas fa-exclamation-circle me-2"></i>Tidak ada data usia yang tersedia.
+                                </div>
+                            @endif
+                        </div>
                     </div>
                 </div>
-            </div>
-        </div>
-
-        <!-- Bagian Data Usia -->
-        <div class="row mb-4">
-            <div class="col-md-6">
-                <div class="card h-100">
-                    <div class="card-header" style="background-color: #198754;">
-                        <h4 class="mb-0 text-white">Distribusi Gender per Usia</h4>
-                    </div>
-                    <div class="card-body">
-                        @if (count($dataUsia) > 0)
-                            <div class="chart-container" style="height: 320px;">
-                                <canvas id="genderUsiaChart"></canvas>
-                            </div>
-                        @else
-                            <div class="alert alert-warning">
-                                Tidak ada data usia yang tersedia.
-                            </div>
-                        @endif
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-6">
-                <div class="card h-100">
-                    <div class="card-header" style="background-color: #198754;">
-                        <h4 class="mb-0 text-white">Piramida Penduduk</h4>
-                    </div>
-                    <div class="card-body">
-                        @if (count($dataUsia) > 0)
-                            <div class="chart-container" style="height: 320px;">
-                                <canvas id="piramidaChart"></canvas>
-                            </div>
-                        @else
-                            <div class="alert alert-warning">
-                                Tidak ada data usia yang tersedia.
-                            </div>
-                        @endif
+                <div class="col-md-6 mb-4 animate-slideInUp" style="animation-delay: 1s;">
+                    <div class="card h-100">
+                        <div class="card-header text-white py-3">
+                            <h4 class="mb-0 fw-bold"><i class="fas fa-chart-pie me-2"></i>Piramida Penduduk</h4>
+                        </div>
+                        <div class="card-body">
+                            @if (count($dataUsia) > 0)
+                                <div class="chart-container" style="height: 320px;">
+                                    <canvas id="piramidaChart"></canvas>
+                                </div>
+                            @else
+                                <div class="alert alert-warning">
+                                    <i class="fas fa-exclamation-circle me-2"></i>Tidak ada data usia yang tersedia.
+                                </div>
+                            @endif
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
     </div>
-@endsection
-
-@section('styles')
-    <style>
-        .chart-container {
-            position: relative;
-            margin: 0 auto;
-            width: 100%;
-        }
-
-        .card {
-            border-radius: 8px;
-            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
-            border: none;
-        }
-
-        .card-header {
-            border-radius: 8px 8px 0 0 !important;
-            padding: 15px 20px;
-        }
-
-        h3.mb-0 {
-            font-weight: 600;
-            font-size: 1.25rem;
-        }
-
-        h5.text-center {
-            margin-bottom: 15px;
-            font-weight: 500;
-            font-size: 1rem;
-        }
-
-        .alert {
-            margin-bottom: 0;
-        }
-    </style>
 @endsection
 
 @section('scripts')
@@ -233,7 +288,7 @@
                         datasets: [{
                             label: 'Jumlah Penduduk',
                             data: Object.values(rwData),
-                            backgroundColor: '#67AE6E',
+                            backgroundColor: '#1a9e3f',
                         }]
                     },
                     options: {
@@ -299,7 +354,7 @@
                         datasets: [{
                             label: 'Jumlah Penduduk',
                             data: pekerjaanValues,
-                            backgroundColor: '#FFCF50',
+                            backgroundColor: '#0d5e1f',
                         }]
                     },
                     options: {
@@ -514,9 +569,8 @@
                         datasets: [{
                             data: pendidikanValues,
                             backgroundColor: [
-                                '#114232', '#1E6F5C', '#87A922', '#FCDC2A',
-                                '#F7B32B', '#F79256', '#D94E1A', '#A63D0D',
-                                '#7A9B49', '#4A7C59'
+                                '#0d5e1f', '#1a9e3f', '#67AE6E', '#A3D977',
+                                '#D1E8A3', '#F7B32B', '#F79256', '#D94E1A'
                             ],
                             borderWidth: 1,
                             borderColor: '#fff'

@@ -2,49 +2,160 @@
 
 @section('title', 'Detail Berita')
 
+<style>
+    /* Reusing the same animations and styles from visi misi */
+    @keyframes fadeIn {
+        from { opacity: 0; }
+        to { opacity: 1; }
+    }
+
+    @keyframes slideInUp {
+        from { transform: translateY(20px); opacity: 0; }
+        to { transform: translateY(0); opacity: 1; }
+    }
+
+    .animate-fadeIn {
+        animation: fadeIn 1s ease-out;
+    }
+
+    .animate-slideInUp {
+        animation: slideInUp 0.8s ease-out;
+    }
+
+    /* Gradient Colors */
+    .bg-gradient-success {
+        background: linear-gradient(135deg, #0d5e1f 0%, #1a9e3f 100%);
+    }
+
+    /* Card Styles */
+    .card {
+        border-radius: 10px;
+        overflow: hidden;
+        border: none;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+        transition: all 0.3s ease;
+    }
+
+    .card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 10px 25px rgba(13, 94, 31, 0.15);
+    }
+
+    .card-header {
+        font-size: 1.25rem;
+        background: linear-gradient(135deg, #0d5e1f 0%, #1a9e3f 100%);
+    }
+
+    /* News Image Style */
+    .news-image {
+        border-radius: 10px;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        transition: all 0.3s ease;
+    }
+
+    .news-image:hover {
+        transform: scale(1.02);
+        box-shadow: 0 10px 25px rgba(13, 94, 31, 0.2);
+    }
+
+    /* Content Styles */
+    .news-content {
+        line-height: 1.8;
+        font-size: 1.1rem;
+    }
+
+    .news-content img {
+        max-width: 100%;
+        height: auto;
+        border-radius: 8px;
+        margin: 1.5rem 0;
+    }
+
+    /* Date Badge */
+    .date-badge {
+        background: linear-gradient(135deg, rgba(13, 94, 31, 0.1) 0%, rgba(26, 158, 63, 0.1) 100%);
+        color: #0d5e1f;
+        padding: 0.5rem 1rem;
+        border-radius: 50px;
+        display: inline-flex;
+        align-items: center;
+    }
+
+    /* Related News Item */
+    .related-news-item {
+        transition: all 0.3s ease;
+        border-left: 3px solid #0d5e1f;
+        padding-left: 1rem;
+    }
+
+    .related-news-item:hover {
+        transform: translateX(5px);
+        border-left: 3px solid #1a9e3f;
+    }
+
+    /* Responsive Adjustments */
+    @media (max-width: 768px) {
+        .news-content {
+            font-size: 1rem;
+        }
+    }
+</style>
+
 @section('content')
-    <div class="container py-5">
-        <div class="row">
-            <div class="col-lg-8">
-                <article>
-                    <h1 class="mb-4">{{ $berita->judul }}</h1>
+    <div class="py-2 bg-light">
+        <div class="container-fluid px-5">
+            <!-- News Content -->
+            <div class="row justify-content-center mt-5">
+                <div class="col-lg-8">
+                    <div class="card border-0 shadow-sm mb-5 animate-slideInUp">
+                        <div class="card-body p-4 p-lg-5">
+                            <h1 class="mb-4 fw-bold" style="color: #000000;">{{ $berita->judul }}</h1>
 
-                    <div class="d-flex align-items-center mb-4">
-                        <span class="text-muted me-3">
-                            <i class="far fa-calendar-alt me-1"></i>
-                            {{ $berita->tanggal_formatted }}
-                        </span>
-                    </div>
-
-                    @if ($berita->gambar)
-                        <div class="mb-4">
-                            <img src="{{ $berita->gambar_thumbnail }}" alt="{{ $berita->judul }}"
-                                class="img-fluid rounded shadow" style="max-width: 500px; height: auto;">
-                        </div>
-                    @endif
-
-                    <div class="content">
-                        {!! $berita->keterangan !!}
-                    </div>
-                </article>
-            </div>
-
-            <div class="col-lg-4">
-                <div class="card shadow-sm mb-4"> 
-                    <div class="card-header bg-primary text-white">
-                        <h5 class="mb-0">Berita Terbaru</h5>
-                    </div>
-                    <div class="card-body">
-                        @foreach ($beritaTerbaru as $item)
-                            <div class="mb-3">
-                                <h6>
-                                    <a href="{{ route('berita.detail', $item->id) }}" class="text-dark">
-                                        {{ Str::limit($item->judul, 50) }}
-                                    </a>
-                                </h6>
-                                <small class="text-muted">{{ $item->tanggal_formatted }}</small>
+                            <div class="d-flex align-items-center mb-4">
+                                <span class="date-badge me-3">
+                                    <i class="far fa-calendar-alt me-2"></i>
+                                    {{ $berita->tanggal_formatted }}
+                                </span>
                             </div>
-                        @endforeach
+
+                            @if ($berita->gambar)
+                                <div class="mb-4 text-center">
+                                    <img src="{{ $berita->gambar_thumbnail }}" alt="{{ $berita->judul }}"
+                                        class="img-fluid news-image" style="max-width: 100%; height: auto;">
+                                </div>
+                            @endif
+
+                            <div class="news-content">
+                                {!! $berita->keterangan !!}
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Related News Sidebar -->
+                <div class="col-lg-4">
+                    <div class="card border-0 shadow-sm animate-slideInUp" style="animation-delay: 0.2s;">
+                        <div class="card-header text-white py-3">
+                            <h5 class="mb-0 fw-bold"><i class="fas fa-newspaper me-2"></i>Berita Terbaru</h5>
+                        </div>
+                        <div class="card-body">
+                            @foreach ($beritaTerbaru as $item)
+                                <div class="related-news-item mb-3">
+                                    <h6 class="fw-bold">
+                                        <a href="{{ route('berita.detail', $item->id) }}" class="text-dark text-decoration-none">
+                                            {{ Str::limit($item->judul, 50) }}
+                                        </a>
+                                    </h6>
+                                    <small class="text-muted d-block mt-1">
+                                        <i class="far fa-calendar-alt me-1"></i>
+                                        {{ $item->tanggal_formatted }}
+                                    </small>
+                                </div>
+                                @if (!$loop->last)
+                                    <hr class="my-2" style="border-top: 1px dashed rgba(13, 94, 31, 0.2);">
+                                @endif
+                            @endforeach
+                        </div>
                     </div>
                 </div>
             </div>

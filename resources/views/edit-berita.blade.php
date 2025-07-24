@@ -1,5 +1,7 @@
 @extends('template')
 
+@section('title', 'Edit Berita Desa Jetis')
+
 @section('content')
 <div class="container py-5">
     <h2 class="text-center mb-4">Edit Berita</h2>
