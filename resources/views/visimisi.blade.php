@@ -5,19 +5,39 @@
 <style>
     /* Animations */
     @keyframes fadeIn {
-        from { opacity: 0; }
-        to { opacity: 1; }
+        from {
+            opacity: 0;
+        }
+
+        to {
+            opacity: 1;
+        }
     }
 
     @keyframes slideInUp {
-        from { transform: translateY(20px); opacity: 0; }
-        to { transform: translateY(0); opacity: 1; }
+        from {
+            transform: translateY(20px);
+            opacity: 0;
+        }
+
+        to {
+            transform: translateY(0);
+            opacity: 1;
+        }
     }
 
     @keyframes pulse {
-        0% { transform: scale(1); }
-        50% { transform: scale(1.05); }
-        100% { transform: scale(1); }
+        0% {
+            transform: scale(1);
+        }
+
+        50% {
+            transform: scale(1.05);
+        }
+
+        100% {
+            transform: scale(1);
+        }
     }
 
     .animate-fadeIn {
@@ -165,6 +185,121 @@
             font-size: 1rem;
         }
     }
+
+    @media (max-width: 576px) {
+        body {
+            font-size: 0.85rem;
+        }
+
+        .display-5 {
+            font-size: 1.8rem !important;
+        }
+
+        .lead {
+            font-size: 1rem !important;
+        }
+
+        .card-body.p-5 {
+            padding: 1rem !important;
+        }
+
+        .card-header {
+            padding: 0.75rem 1rem;
+        }
+
+        .card-header h4 {
+            font-size: 1.1rem;
+        }
+
+        .fs-4 {
+            font-size: 1.1rem !important;
+        }
+
+        .blockquote-footer {
+            font-size: 0.8rem;
+        }
+
+        .blockquote p.fs-4 {
+            font-size: 1rem !important;
+            line-height: 1.4;
+        }
+
+        .blockquote-footer {
+            font-size: 0.75rem !important;
+        }
+
+        .fa-quote-left {
+            margin-top: 0.25rem;
+        }
+
+        .v-timeline {
+            padding-left: 35px;
+        }
+
+        .v-timeline:before {
+            left: 15px;
+        }
+
+        .v-timeline-badge {
+            left: -35px;
+            width: 30px;
+            height: 30px;
+            font-size: 0.9rem;
+        }
+
+        .v-timeline-content {
+            padding: 0.75rem !important;
+        }
+
+        .v-timeline-content h5 {
+            font-size: 1rem;
+        }
+
+        .value-icon {
+            width: 60px;
+            height: 60px;
+        }
+
+        .value-icon i {
+            font-size: 1.5rem !important;
+        }
+
+        .col-md-3 h5 {
+            font-size: 0.95rem;
+        }
+
+        .py-5 {
+            padding-top: 1.5rem !important;
+            padding-bottom: 1.5rem !important;
+        }
+
+        .py-4 {
+            padding-top: 1rem !important;
+            padding-bottom: 1rem !important;
+        }
+
+        .mt-5 {
+            margin-top: 1.5rem !important;
+        }
+
+        .mb-5 {
+            margin-bottom: 1.5rem !important;
+        }
+
+        .container-fluid.px-5 {
+            padding-left: 1rem !important;
+            padding-right: 1rem !important;
+        }
+
+        .fa-quote-left {
+            font-size: 2rem !important;
+        }
+
+        .me-3,
+        .me-2 {
+            margin-right: 0.5rem !important;
+        }
+    }
 </style>
 
 @section('content')
@@ -176,7 +311,8 @@
                     <div class="col-lg-10">
                         <h1 class="fw-bold mb-3 display-5" style="color: #0d5e1f;">Visi & Misi Desa Jetis</h1>
                         <p class="fw-bold lead" style="color: #1a9e3f;">Arah Pembangunan dan Tujuan Pemerintahan Desa</p>
-                        <div class="border-bottom border-success border-2 mx-auto" style="width: 100px; background: linear-gradient(135deg, #0d5e1f 0%, #1a9e3f 100%);"></div>
+                        <div class="border-bottom border-success border-2 mx-auto"
+                            style="width: 100px; background: linear-gradient(135deg, #0d5e1f 0%, #1a9e3f 100%);"></div>
                     </div>
                 </div>
             </section>
@@ -279,7 +415,8 @@
                             <div class="row text-center">
                                 <div class="col-md-3 mb-4">
                                     <div class="p-3">
-                                        <div class="value-icon rounded-circle d-inline-flex align-items-center justify-content-center animate-pulse">
+                                        <div
+                                            class="value-icon rounded-circle d-inline-flex align-items-center justify-content-center animate-pulse">
                                             <i class="fas fa-handshake fa-2x" style="color: #0d5e1f;"></i>
                                         </div>
                                         <h5 class="mt-3 fw-bold" style="color: #0d5e1f;">Gotong Royong</h5>
@@ -287,7 +424,8 @@
                                 </div>
                                 <div class="col-md-3 mb-4">
                                     <div class="p-3">
-                                        <div class="value-icon rounded-circle d-inline-flex align-items-center justify-content-center animate-pulse" style="animation-delay: 0.2s;">
+                                        <div class="value-icon rounded-circle d-inline-flex align-items-center justify-content-center animate-pulse"
+                                            style="animation-delay: 0.2s;">
                                             <i class="fas fa-balance-scale fa-2x" style="color: #0d5e1f;"></i>
                                         </div>
                                         <h5 class="mt-3 fw-bold" style="color: #0d5e1f;">Keadilan</h5>
@@ -295,7 +433,8 @@
                                 </div>
                                 <div class="col-md-3 mb-4">
                                     <div class="p-3">
-                                        <div class="value-icon rounded-circle d-inline-flex align-items-center justify-content-center animate-pulse" style="animation-delay: 0.4s;">
+                                        <div class="value-icon rounded-circle d-inline-flex align-items-center justify-content-center animate-pulse"
+                                            style="animation-delay: 0.4s;">
                                             <i class="fas fa-leaf fa-2x" style="color: #0d5e1f;"></i>
                                         </div>
                                         <h5 class="mt-3 fw-bold" style="color: #0d5e1f;">Kelestarian</h5>
@@ -303,7 +442,8 @@
                                 </div>
                                 <div class="col-md-3 mb-4">
                                     <div class="p-3">
-                                        <div class="value-icon rounded-circle d-inline-flex align-items-center justify-content-center animate-pulse" style="animation-delay: 0.6s;">
+                                        <div class="value-icon rounded-circle d-inline-flex align-items-center justify-content-center animate-pulse"
+                                            style="animation-delay: 0.6s;">
                                             <i class="fas fa-users fa-2x" style="color: #0d5e1f;"></i>
                                         </div>
                                         <h5 class="mt-3 fw-bold" style="color: #0d5e1f;">Kebersamaan</h5>

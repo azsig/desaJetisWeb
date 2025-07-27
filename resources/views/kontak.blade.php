@@ -5,13 +5,25 @@
 <style>
     /* Consistent with visi misi page styles */
     @keyframes fadeIn {
-        from { opacity: 0; }
-        to { opacity: 1; }
+        from {
+            opacity: 0;
+        }
+
+        to {
+            opacity: 1;
+        }
     }
 
     @keyframes slideInUp {
-        from { transform: translateY(20px); opacity: 0; }
-        to { transform: translateY(0); opacity: 1; }
+        from {
+            transform: translateY(20px);
+            opacity: 0;
+        }
+
+        to {
+            transform: translateY(0);
+            opacity: 1;
+        }
     }
 
     .animate-fadeIn {
@@ -108,6 +120,72 @@
             font-size: 1rem;
         }
     }
+
+    @media (max-width: 576px) {
+        .display-5 {
+            font-size: 2rem !important;
+        }
+
+        .lead {
+            font-size: 1rem !important;
+        }
+
+        .card-header h4 {
+            font-size: 1rem !important;
+        }
+
+        .card {
+            padding: 1rem;
+            margin-bottom: 1rem;
+        }
+
+        .contact-icon {
+            width: 35px !important;
+            height: 35px !important;
+            font-size: 0.9rem !important;
+            margin-right: 10px !important;
+        }
+
+        .accordion-button {
+            font-size: 0.9rem;
+            padding: 0.75rem 1rem;
+        }
+
+        .accordion-body {
+            font-size: 0.85rem;
+            padding: 0.75rem;
+        }
+
+        .btn {
+            font-size: 0.9rem;
+            padding: 0.5rem 1rem;
+        }
+
+        .container-fluid.px-5 {
+            padding-left: 1rem !important;
+            padding-right: 1rem !important;
+        }
+
+        .py-5 {
+            padding-top: 2rem !important;
+            padding-bottom: 2rem !important;
+        }
+
+        .mt-5 {
+            margin-top: 2rem !important;
+        }
+
+        .card-body p.mb-0 {
+            word-break: break-all;
+            white-space: normal;
+            overflow-wrap: break-word;
+        }
+
+        .card-body .d-flex.align-items-center div:last-child p {
+            word-break: break-word;
+            overflow-wrap: anywhere;
+        }
+    }
 </style>
 
 @section('content')
@@ -118,8 +196,10 @@
                 <div class="row justify-content-center">
                     <div class="col-lg-10">
                         <h1 class="fw-bold mb-3 display-5" style="color: #0d5e1f;">Kontak Desa Jetis</h1>
-                        <p class="fw-bold lead" style="color: #1a9e3f;">Kami siap melayani dan menerima masukan dari masyarakat Desa Jetis</p>
-                        <div class="border-bottom border-success border-2 mx-auto" style="width: 100px; background: linear-gradient(135deg, #0d5e1f 0%, #1a9e3f 100%);"></div>
+                        <p class="fw-bold lead" style="color: #1a9e3f;">Kami siap melayani dan menerima masukan dari
+                            masyarakat Desa Jetis</p>
+                        <div class="border-bottom border-success border-2 mx-auto"
+                            style="width: 100px; background: linear-gradient(135deg, #0d5e1f 0%, #1a9e3f 100%);"></div>
                     </div>
                 </div>
             </section>
@@ -199,8 +279,10 @@
                             <h4 class="mb-0 fw-bold"><i class="fas fa-edit me-2"></i>Formulir Aduan Masyarakat</h4>
                         </div>
                         <div class="card-body">
-                            <p class="mb-4">Laporkan keluhan atau saran Anda kepada pemerintah desa melalui formulir berikut:</p>
-                            <a href="https://forms.gle/tdbSHswpS8t4dLHk8" target="_blank" class="btn btn-success text-white">
+                            <p class="mb-4">Laporkan keluhan atau saran Anda kepada pemerintah desa melalui formulir
+                                berikut:</p>
+                            <a href="https://forms.gle/tdbSHswpS8t4dLHk8" target="_blank"
+                                class="btn btn-success text-white">
                                 <i class="fas fa-paper-plane me-2"></i>Isi Form Aduan
                             </a>
                         </div>
@@ -213,16 +295,16 @@
                 <div class="col-lg-12">
                     <div class="card border-0 shadow-sm">
                         <div class="card-header text-white py-3">
-                            <h4 class="mb-0 fw-bold"><i class="fas fa-question-circle me-2"></i>Pertanyaan yang Sering Diajukan</h4>
+                            <h4 class="mb-0 fw-bold"><i class="fas fa-question-circle me-2"></i>Pertanyaan yang Sering
+                                Diajukan</h4>
                         </div>
                         <div class="card-body">
                             <div class="accordion" id="faqAccordion">
                                 <!-- FAQ Item 1 -->
                                 <div class="accordion-item border-0 mb-2">
                                     <h3 class="accordion-header" id="headingOne">
-                                        <button class="accordion-button collapsed" type="button"
-                                            data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="false"
-                                            aria-controls="collapseOne">
+                                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                            data-bs-target="#collapseOne" aria-expanded="false" aria-controls="collapseOne">
                                             Bagaimana cara mengajukan surat secara online?
                                         </button>
                                     </h3>
@@ -252,9 +334,8 @@
                                 <!-- FAQ Item 2 -->
                                 <div class="accordion-item border-0 mb-2">
                                     <h3 class="accordion-header" id="headingTwo">
-                                        <button class="accordion-button collapsed" type="button"
-                                            data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false"
-                                            aria-controls="collapseTwo">
+                                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                            data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
                                             Bagaimana prosedur melapor jika menemukan masalah infrastruktur?
                                         </button>
                                     </h3>
@@ -277,8 +358,8 @@
                                 <div class="accordion-item border-0 mb-2">
                                     <h3 class="accordion-header" id="headingThree">
                                         <button class="accordion-button collapsed" type="button"
-                                            data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false"
-                                            aria-controls="collapseThree">
+                                            data-bs-toggle="collapse" data-bs-target="#collapseThree"
+                                            aria-expanded="false" aria-controls="collapseThree">
                                             Apa syarat untuk mendapatkan bantuan sosial atau BLT?
                                         </button>
                                     </h3>

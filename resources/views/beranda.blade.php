@@ -3,15 +3,47 @@
 @section('title', 'Beranda')
 
 <style>
+    .judul-berita {
+        color: #0d5e1f;
+    }
+
+    .lihat-semua-btn {
+        border-color: #0d5e1f;
+        color: #0d5e1f;
+    }
+
+    .gambar-berita {
+        height: 200px;
+        width: 100%;
+        object-fit: cover;
+    }
+
+    .baca-selengkapnya-btn {
+        border-color: #0d5e1f;
+        color: #0d5e1f;
+    }
+
     /* Animations */
     @keyframes fadeIn {
-        from { opacity: 0; }
-        to { opacity: 1; }
+        from {
+            opacity: 0;
+        }
+
+        to {
+            opacity: 1;
+        }
     }
 
     @keyframes slideUp {
-        from { transform: translateY(20px); opacity: 0; }
-        to { transform: translateY(0); opacity: 1; }
+        from {
+            transform: translateY(20px);
+            opacity: 0;
+        }
+
+        to {
+            transform: translateY(0);
+            opacity: 1;
+        }
     }
 
     .animate-fadeIn {
@@ -72,12 +104,19 @@
     }
 
     @keyframes bounce {
-        0%, 20%, 50%, 80%, 100% {
+
+        0%,
+        20%,
+        50%,
+        80%,
+        100% {
             transform: translateY(0) translateX(-50%);
         }
+
         40% {
             transform: translateY(-20px) translateX(-50%);
         }
+
         60% {
             transform: translateY(-10px) translateX(-50%);
         }
@@ -87,10 +126,12 @@
     @media (max-width: 768px) {
         .hero-section h1 {
             font-size: 2.5rem;
+            padding: 20px;
         }
 
         .hero-section p {
             font-size: 1rem;
+            padding: 20px;
         }
 
         .card-body {
@@ -100,7 +141,13 @@
 
     @media (max-width: 576px) {
         .hero-section h1 {
-            font-size: 2rem;
+            font-size: 1.7rem;
+            padding: 20px;
+        }
+
+        .hero-section p {
+            font-size: 1rem;
+            padding: 20px;
         }
 
         .scroll-down-btn {
@@ -108,12 +155,103 @@
             height: 35px;
             bottom: 20px;
         }
+
+        /* Profil Section */
+        #profil {
+            padding: 1rem;
+        }
+
+        #profil h2 {
+            font-size: 1.5rem;
+        }
+
+        #profil h3 {
+            font-size: 1.3rem;
+        }
+
+        #profil h4 {
+            font-size: 1.3rem;
+        }
+
+        #profil p {
+            font-size: 0.9rem;
+        }
+
+        .btn-selengkapnya a {
+            font-size: 0.8rem;
+        }
+
+        /* Berita Section */
+        #berita {
+            padding: 1rem;
+        }
+
+        #berita h2 {
+            font-size: 1.5rem;
+        }
+
+        .lihat-semua-btn {
+            font-size: 0.5rem;
+            padding: 0.25rem 0.5rem;
+        }
+
+        .card-title {
+            font-size: 1rem;
+        }
+
+        .card-text {
+            font-size: 0.8rem;
+        }
+
+        .baca-selengkapnya-btn {
+            font-size: 0.8rem;
+        }
+
+        /* Layanan Online Section */
+        .py-5 h2 {
+            font-size: 1.5rem;
+            padding: 2rem;
+        }
+
+        .card-title {
+            font-size: 1.3rem;
+        }
+
+        .card-text {
+            font-size: 0.8rem;
+        }
+
+        .btn-success {
+            font-size: 0.5rem;
+            padding: 0.25rem 0.75rem;
+        }
+
+        .col-lg-6:last-child {
+            height: 300px;
+        }
+
+        .card-body.p-4 {
+            padding: 1rem !important;
+        }
+
+        .ratio-16x9 {
+            height: 250px;
+        }
+
+        #profil .row {
+            flex-direction: column;
+        }
+
+        #profil .col-lg-6:first-child {
+            margin-bottom: 1.5rem;
+        }
     }
 </style>
 
 @section('content')
     <!-- Hero Section -->
-    <section class="hero-section" style="margin-top: 0; height: 80vh; min-height: 200px; overflow: hidden; position: relative;">
+    <section class="hero-section"
+        style="margin-top: 0; height: 80vh; min-height: 200px; overflow: hidden; position: relative;">
         <!-- Background Image -->
         <div class="position-absolute w-100 h-100" style="top: 0; left: 0; z-index: -1;">
             <img src="{{ asset('images/hero-desa-jetis.jpg') }}" alt="Pemandangan Desa Jetis" class="w-100 h-100"
@@ -174,8 +312,9 @@
                         </div>
                     </div>
 
-                    <div class="mt-4">
-                        <a href="{{ url('sejarah') }}" class="btn btn-success px-4" style="background: linear-gradient(135deg, #0d5e1f 0%, #1a9e3f 100%); border: none;">
+                    <div class="btn-selengkapnya" style="margin-top: 1rem">
+                        <a href="{{ url('sejarah') }}" class="btn btn-success px-4"
+                            style="background: linear-gradient(135deg, #0d5e1f 0%, #1a9e3f 100%); border: none;">
                             <i class="fas fa-book me-2"></i>Selengkapnya
                         </a>
                     </div>
@@ -201,8 +340,8 @@
     <section id="berita" class="py-5">
         <div class="container">
             <div class="d-flex justify-content-between align-items-center mb-4">
-                <h2 class="fw-bold" style="color: #0d5e1f;">Berita Terkini</h2>
-                <a href="{{ url('berita') }}" class="btn btn-outline-success" style="border-color: #0d5e1f; color: #0d5e1f;">
+                <h2 class="fw-bold judul-berita">Berita Terkini</h2>
+                <a href="{{ url('berita') }}" class="btn btn-outline-success lihat-semua-btn">
                     <i class="fas fa-list me-2"></i>Lihat Semua Berita
                 </a>
             </div>
@@ -213,12 +352,11 @@
                         <div class="card h-100 shadow-sm hover-effect">
                             @if ($berita->gambar_thumbnail)
                                 <img src="{{ $berita->gambar_thumbnail }}" alt="{{ $berita->judul }}"
-                                    class="img-fluid rounded shadow" style="height: 200px; width: 100%; object-fit: cover;"
+                                    class="img-fluid rounded shadow gambar-berita"
                                     onerror="this.onerror=null;this.src='https://via.placeholder.com/800x400?text=Gambar+Tidak+Tersedia';">
                             @else
                                 <img src="https://via.placeholder.com/800x400?text=Gambar+Tidak+Tersedia"
-                                    alt="Gambar tidak tersedia" class="img-fluid rounded shadow"
-                                    style="height: 200px; width: 100%; object-fit: cover;">
+                                    alt="Gambar tidak tersedia" class="img-fluid rounded shadow gambar-berita">
                             @endif
 
                             <div class="card-body d-flex flex-column">
@@ -226,14 +364,13 @@
                                 <p class="card-text text-muted">
                                     {{ Str::limit(strip_tags($berita->keterangan), 120) }}
                                 </p>
-
                                 <div class="mt-auto">
                                     <p class="text-muted small mb-2">
                                         <i class="far fa-calendar-alt me-1"></i>
                                         {{ \Carbon\Carbon::parse($berita->tanggal)->isoFormat('D MMMM Y') }}
                                     </p>
                                     <a href="{{ route('berita.detail', $berita->id) }}"
-                                        class="btn btn-outline-success btn-sm" style="border-color: #0d5e1f; color: #0d5e1f;">
+                                        class="btn btn-outline-success btn-sm baca-selengkapnya-btn">
                                         Baca Selengkapnya <i class="fas fa-arrow-right ms-1"></i>
                                     </a>
                                 </div>
@@ -244,6 +381,7 @@
             </div>
         </div>
     </section>
+
 
     <!-- Layanan Online -->
     <section class="py-5" style="background-color: #f8f9fa;">
@@ -261,7 +399,8 @@
                             <h4 class="card-title" style="color: #0d5e1f;">SKTM Online</h4>
                             <p class="card-text text-muted">Permohonan Surat Keterangan Tidak Mampu untuk kebutuhan
                                 pendidikan dan kesehatan</p>
-                            <a href="https://forms.gle/nde66RxMre45MubM9" class="btn btn-success rounded-pill px-4 mt-3" style="background: linear-gradient(135deg, #0d5e1f 0%, #1a9e3f 100%); border: none;">
+                            <a href="https://forms.gle/nde66RxMre45MubM9"  target="_blank" class="btn btn-success rounded-pill px-4 mt-3"
+                                style="background: linear-gradient(135deg, #0d5e1f 0%, #1a9e3f 100%); border: none;">
                                 <i class="fas fa-edit me-2"></i>Buat Permohonan
                             </a>
                         </div>
@@ -278,7 +417,8 @@
                             <h4 class="card-title" style="color: #0d5e1f;">Domisili Digital</h4>
                             <p class="card-text text-muted">Pengajuan Surat Keterangan Domisili untuk keperluan
                                 administrasi kependudukan</p>
-                            <a href="https://forms.gle/c3vA4XMEfYa5s3nG7" class="btn btn-success rounded-pill px-4 mt-3" style="background: linear-gradient(135deg, #0d5e1f 0%, #1a9e3f 100%); border: none;">
+                            <a href="https://forms.gle/c3vA4XMEfYa5s3nG7"  target="_blank" class="btn btn-success rounded-pill px-4 mt-3"
+                                style="background: linear-gradient(135deg, #0d5e1f 0%, #1a9e3f 100%); border: none;">
                                 <i class="fas fa-file-signature me-2"></i>Ajukan Sekarang
                             </a>
                         </div>
@@ -295,7 +435,8 @@
                             <h4 class="card-title" style="color: #0d5e1f;">Legalitas Usaha</h4>
                             <p class="card-text text-muted">Pembuatan Surat Keterangan Usaha untuk pengembangan UMKM Desa
                                 Jetis</p>
-                            <a href="https://forms.gle/jQUNEuf6wsg1VPTR9" class="btn btn-success rounded-pill px-4 mt-3" style="background: linear-gradient(135deg, #0d5e1f 0%, #1a9e3f 100%); border: none;">
+                            <a href="https://forms.gle/jQUNEuf6wsg1VPTR9"  target="_blank" class="btn btn-success rounded-pill px-4 mt-3"
+                                style="background: linear-gradient(135deg, #0d5e1f 0%, #1a9e3f 100%); border: none;">
                                 <i class="fas fa-rocket me-2"></i>Daftarkan Usaha
                             </a>
                         </div>

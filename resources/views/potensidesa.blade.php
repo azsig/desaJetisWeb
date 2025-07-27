@@ -5,19 +5,39 @@
 <style>
     /* Animations */
     @keyframes fadeIn {
-        from { opacity: 0; }
-        to { opacity: 1; }
+        from {
+            opacity: 0;
+        }
+
+        to {
+            opacity: 1;
+        }
     }
 
     @keyframes slideInUp {
-        from { transform: translateY(20px); opacity: 0; }
-        to { transform: translateY(0); opacity: 1; }
+        from {
+            transform: translateY(20px);
+            opacity: 0;
+        }
+
+        to {
+            transform: translateY(0);
+            opacity: 1;
+        }
     }
 
     @keyframes pulse {
-        0% { transform: scale(1); }
-        50% { transform: scale(1.05); }
-        100% { transform: scale(1); }
+        0% {
+            transform: scale(1);
+        }
+
+        50% {
+            transform: scale(1.05);
+        }
+
+        100% {
+            transform: scale(1);
+        }
     }
 
     .animate-fadeIn {
@@ -113,6 +133,117 @@
             font-size: 1rem;
         }
     }
+
+    @media (max-width: 576px) {
+        .display-5 {
+            font-size: 1.8rem !important;
+        }
+
+        .lead {
+            font-size: 1rem !important;
+        }
+
+        .card-header h4 {
+            font-size: 1.1rem !important;
+        }
+
+        .card-text,
+        .list-group-item {
+            font-size: 0.9rem !important;
+        }
+
+        h6.fw-bold {
+            font-size: 0.85rem !important;
+        }
+
+        .py-5 {
+            padding-top: 2rem !important;
+            padding-bottom: 2rem !important;
+        }
+
+        .py-4 {
+            padding-top: 1.5rem !important;
+            padding-bottom: 1.5rem !important;
+        }
+
+        .px-5 {
+            padding-left: 1rem !important;
+            padding-right: 1rem !important;
+        }
+
+        .card-body {
+            padding: 1rem !important;
+        }
+
+        .potensi-icon {
+            width: 45px !important;
+            height: 45px !important;
+        }
+
+        .col-lg-11 {
+            padding-left: 0.5rem !important;
+            padding-right: 0.5rem !important;
+        }
+
+        .hero-title:after {
+            width: 70px;
+            bottom: -5px;
+        }
+
+        .row-cols-md-2>* {
+            padding-left: 0.25rem !important;
+            padding-right: 0.25rem !important;
+        }
+
+        .progress {
+            height: 8px;
+        }
+
+        .row-cols-1>* {
+            flex: 0 0 100%;
+            max-width: 100%;
+        }
+
+        .container-fluid.px-5 {
+            padding-left: 0.5rem !important;
+            padding-right: 0.5rem !important;
+        }
+
+        .col-lg-11 {
+            padding-left: 0 !important;
+            padding-right: 0 !important;
+        }
+
+        .card {
+            margin-left: 0.7rem;
+            margin-right: 0.7rem;
+            border-radius: 8px !important;
+        }
+
+        .card-header {
+            padding: 0.75rem 1rem !important;
+        }
+
+        .potensi-icon {
+            width: 40px !important;
+            height: 40px !important;
+        }
+
+        .card-header h4 {
+            font-size: 1.2rem !important;
+            white-space: normal;
+        }
+
+        .card-body .row.g-3 {
+            margin-left: -0.25rem;
+            margin-right: -0.25rem;
+        }
+
+        .card-body .col-6 {
+            padding-left: 0.25rem;
+            padding-right: 0.25rem;
+        }
+    }
 </style>
 
 @section('content')
@@ -124,7 +255,8 @@
                     <div class="col-lg-10">
                         <h1 class="fw-bold mb-3 display-5" style="color: #0d5e1f;">Potensi Unggulan Desa Jetis</h1>
                         <p class="fw-bold lead" style="color: #1a9e3f;">Menggali Kekayaan Lokal, Menggerakkan Ekonomi Desa</p>
-                        <div class="border-bottom border-success border-2 mx-auto" style="width: 100px; background: linear-gradient(135deg, #0d5e1f 0%, #1a9e3f 100%);"></div>
+                        <div class="border-bottom border-success border-2 mx-auto"
+                            style="width: 100px; background: linear-gradient(135deg, #0d5e1f 0%, #1a9e3f 100%);"></div>
                     </div>
                 </div>
             </section>
@@ -145,9 +277,12 @@
                                     </div>
                                 </div>
                                 <div class="card-body">
-                                    <p class="card-text">Desa Jetis menghasilkan rata-rata 15.000 ton padi per tahun dengan tiga kali masa panen. Didukung oleh irigasi teknis dan kelompok tani aktif yang menjadi penyangga pangan utama wilayah Delanggu.</p>
+                                    <p class="card-text">Desa Jetis menghasilkan rata-rata 15.000 ton padi per tahun dengan
+                                        tiga kali masa panen. Didukung oleh irigasi teknis dan kelompok tani aktif yang
+                                        menjadi penyangga pangan utama wilayah Delanggu.</p>
                                     <div class="progress mb-3">
-                                        <div class="progress-bar" role="progressbar" style="width: 85%" aria-valuenow="85" aria-valuemin="0" aria-valuemax="100"></div>
+                                        <div class="progress-bar" role="progressbar" style="width: 85%" aria-valuenow="85"
+                                            aria-valuemin="0" aria-valuemax="100"></div>
                                     </div>
                                     <small class="text-muted">85% lahan pertanian aktif</small>
                                 </div>
@@ -167,16 +302,21 @@
                                 </div>
                                 <div class="card-body">
                                     <ul class="list-group list-group-flush">
-                                        <li class="list-group-item bg-transparent d-flex justify-content-between align-items-center px-0 border-0">
-                                            <span><i class="fas fa-check-circle me-2" style="color: #0d5e1f;"></i>Ketahanan Pangan Desa</span>
+                                        <li
+                                            class="list-group-item bg-transparent d-flex justify-content-between align-items-center px-0 border-0">
+                                            <span><i class="fas fa-check-circle me-2" style="color: #0d5e1f;"></i>Ketahanan
+                                                Pangan Desa</span>
                                             <span class="badge-potensi">Aktif</span>
                                         </li>
-                                        <li class="list-group-item bg-transparent d-flex justify-content-between align-items-center px-0 border-0">
-                                            <span><i class="fas fa-check-circle me-2" style="color: #0d5e1f;"></i>Potensi Peternakan Warga</span>
+                                        <li
+                                            class="list-group-item bg-transparent d-flex justify-content-between align-items-center px-0 border-0">
+                                            <span><i class="fas fa-check-circle me-2" style="color: #0d5e1f;"></i>Potensi
+                                                Peternakan Warga</span>
                                             <span class="badge-potensi">Tersedia</span>
                                         </li>
                                     </ul>
-                                    <p class="card-text mt-3">Program kemandirian pangan melalui optimalisasi pekarangan dan pengolahan hasil pertanian berkelanjutan.</p>
+                                    <p class="card-text mt-3">Program kemandirian pangan melalui optimalisasi pekarangan dan
+                                        pengolahan hasil pertanian berkelanjutan.</p>
                                 </div>
                             </div>
                         </div>
@@ -195,7 +335,8 @@
                                 <div class="card-body">
                                     <div class="row g-3">
                                         <div class="col-6">
-                                            <div class="p-3 border rounded text-center" style="border-color: rgba(13, 94, 31, 0.25) !important;">
+                                            <div class="p-3 border rounded text-center"
+                                                style="border-color: rgba(13, 94, 31, 0.25) !important;">
                                                 <div class="potensi-icon mx-auto mb-2">
                                                     <i class="fas fa-mortar-pestle fs-4" style="color: #0d5e1f;"></i>
                                                 </div>
@@ -203,7 +344,8 @@
                                             </div>
                                         </div>
                                         <div class="col-6">
-                                            <div class="p-3 border rounded text-center" style="border-color: rgba(13, 94, 31, 0.25) !important;">
+                                            <div class="p-3 border rounded text-center"
+                                                style="border-color: rgba(13, 94, 31, 0.25) !important;">
                                                 <div class="potensi-icon mx-auto mb-2">
                                                     <i class="fas fa-bread-slice fs-4" style="color: #0d5e1f;"></i>
                                                 </div>
@@ -212,7 +354,9 @@
                                         </div>
                                     </div>
                                     <p class="card-text mt-3">
-                                        Produk olahan makanan khas desa ini merupakan hasil kreativitas masyarakat dalam memanfaatkan bahan pangan lokal. Makanan ini menjadi salah satu produk unggulan warga.
+                                        Produk olahan makanan khas desa ini merupakan hasil kreativitas masyarakat dalam
+                                        memanfaatkan bahan pangan lokal. Makanan ini menjadi salah satu produk unggulan
+                                        warga.
                                     </p>
                                 </div>
                             </div>
@@ -250,7 +394,8 @@
                                             <h6 class="fw-bold mb-1" style="color: #0d5e1f;">Kasur</h6>
                                         </div>
                                     </div>
-                                    <p class="card-text mt-3">Kerajinan tangan yang mempertahankan kearifan lokal dengan kualitas premium.</p>
+                                    <p class="card-text mt-3">Kerajinan tangan yang mempertahankan kearifan lokal dengan
+                                        kualitas premium.</p>
                                 </div>
                             </div>
                         </div>

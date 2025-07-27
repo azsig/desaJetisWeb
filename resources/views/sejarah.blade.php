@@ -5,19 +5,39 @@
 <style>
     /* Animations */
     @keyframes fadeIn {
-        from { opacity: 0; }
-        to { opacity: 1; }
+        from {
+            opacity: 0;
+        }
+
+        to {
+            opacity: 1;
+        }
     }
 
     @keyframes slideInLeft {
-        from { transform: translateX(-20px); opacity: 0; }
-        to { transform: translateX(0); opacity: 1; }
+        from {
+            transform: translateX(-20px);
+            opacity: 0;
+        }
+
+        to {
+            transform: translateX(0);
+            opacity: 1;
+        }
     }
 
     @keyframes pulse {
-        0% { transform: scale(1); }
-        50% { transform: scale(1.05); }
-        100% { transform: scale(1); }
+        0% {
+            transform: scale(1);
+        }
+
+        50% {
+            transform: scale(1.05);
+        }
+
+        100% {
+            transform: scale(1);
+        }
     }
 
     .animate-fadeIn {
@@ -165,6 +185,116 @@
             font-size: 1rem;
         }
     }
+
+    @media (max-width: 576px) {
+        body {
+            font-size: 0.9rem;
+        }
+
+        .display-5 {
+            font-size: 1.8rem !important;
+        }
+
+        .lead {
+            font-size: 1rem !important;
+        }
+
+        .timeline-content h4 {
+            font-size: 1.1rem;
+        }
+
+        .timeline-content p {
+            font-size: 0.85rem;
+        }
+
+        .table {
+            font-size: 0.85rem;
+        }
+
+        .card-header h3 {
+            font-size: 1.2rem;
+        }
+
+        .badge {
+            font-size: 0.75rem;
+            padding: 0.35rem 0.7rem;
+        }
+
+        .card-body.p-5 {
+            padding: 1.5rem !important;
+        }
+
+        .timeline-content.p-4 {
+            padding: 1rem !important;
+        }
+
+        .py-5 {
+            padding-top: 1.5rem !important;
+            padding-bottom: 1.5rem !important;
+        }
+
+        .card-body.p-5 {
+            padding: 1rem !important;
+        }
+
+        .timeline-content.p-4 {
+            padding: 0.75rem !important;
+        }
+
+        .timeline-item {
+            margin-bottom: 1.5rem;
+        }
+
+        .table-responsive {
+            padding: 0;
+        }
+
+        .table td,
+        .table th {
+            padding: 0.5rem;
+        }
+
+        .card-header {
+            padding: 0.75rem 1rem;
+        }
+
+        .py-4.text-center {
+            padding-top: 1rem !important;
+            padding-bottom: 1rem !important;
+        }
+
+        .display-5 {
+            margin-bottom: 0.5rem !important;
+        }
+
+        .container-fluid.px-5 {
+            padding-left: 1rem !important;
+            padding-right: 1rem !important;
+        }
+
+        .timeline-content:before {
+            top: 12px;
+            width: 12px;
+            height: 12px;
+        }
+
+        .timeline-icon {
+            width: 35px;
+            height: 35px;
+            font-size: 0.9rem;
+            left: -47px;
+        }
+
+        .mb-5,
+        .my-5 {
+            margin-bottom: 2rem !important;
+        }
+
+        .py-5 {
+            padding-top: 2rem !important;
+            padding-bottom: 2rem !important;
+        }
+    }
 </style>
 
 @section('content')
@@ -176,7 +306,8 @@
                     <div class="col-lg-10">
                         <h1 class="fw-bold mb-3 display-5" style="color: #0d5e1f;">Sejarah Desa Jetis</h1>
                         <p class="fw-bold lead" style="color: #1a9e3f;">Melestarikan Warisan, Membangun Masa Depan</p>
-                        <div class="border-bottom border-success border-2 mx-auto" style="width: 100px; background: linear-gradient(135deg, #0d5e1f 0%, #1a9e3f 100%);"></div>
+                        <div class="border-bottom border-success border-2 mx-auto"
+                            style="width: 100px; background: linear-gradient(135deg, #0d5e1f 0%, #1a9e3f 100%);"></div>
                     </div>
                 </div>
             </section>
@@ -193,7 +324,8 @@
                                     </div>
                                     <div class="timeline-content p-4 rounded">
                                         <h4 class="fw-bold" style="color: #0d5e1f;">Asal Usul Nama</h4>
-                                        <p class="mb-0">Berdasarkan sejarah lisan para sesepuh di Desa Jetis, dahulu wilayah ini
+                                        <p class="mb-0">Berdasarkan sejarah lisan para sesepuh di Desa Jetis, dahulu
+                                            wilayah ini
                                             merupakan daerah yang sangat lebat ditumbuhi pohon-pohon besar sehingga dikenal
                                             dengan sebutan "Desa Jetis Ngalas". Namun secara administratif, wilayah ini
                                             diberi nama resmi Desa Jetis.</p>
@@ -206,7 +338,8 @@
                                     </div>
                                     <div class="timeline-content p-4 rounded">
                                         <h4 class="fw-bold" style="color: #0d5e1f;">Potensi Pertanian</h4>
-                                        <p class="mb-0">Desa Jetis merupakan desa yang gemah ripah loh jinawi, dengan tanah yang subur
+                                        <p class="mb-0">Desa Jetis merupakan desa yang gemah ripah loh jinawi, dengan
+                                            tanah yang subur
                                             dan sangat cocok untuk pertanian. Sebagian besar masyarakat Desa Jetis bermata
                                             pencaharian sebagai petani. Desa ini juga dikenal sebagai salah satu desa
                                             penghasil padi terbesar di Kecamatan Delanggu, dengan potensi panen hingga tiga
@@ -233,7 +366,8 @@
                                     </div>
                                     <div class="timeline-content p-4 rounded">
                                         <h4 class="fw-bold" style="color: #0d5e1f;">Pemerintahan Desa</h4>
-                                        <p class="mb-0">Pemerintahan Desa Jetis secara resmi berdiri sejak tahun 1947 dan telah dipimpin
+                                        <p class="mb-0">Pemerintahan Desa Jetis secara resmi berdiri sejak tahun 1947 dan
+                                            telah dipimpin
                                             oleh beberapa kepala desa yang berdedikasi untuk memajukan desa.</p>
                                     </div>
                                 </div>

@@ -88,6 +88,95 @@
             border-radius: 8px;
         }
     }
+
+    @media (max-width: 576px) {
+        body {
+            font-size: 0.85rem;
+        }
+
+        .display-5 {
+            font-size: 1.5rem !important;
+        }
+        .lead {
+            font-size: 1rem !important;
+        }
+
+        .card-body.p-5 {
+            padding: 1rem !important;
+        }
+        .card-header {
+            padding: 0.75rem 1rem;
+        }
+        .card-header h4 {
+            font-size: 1.1rem;
+        }
+
+        .table th, .table td {
+            padding: 0.5rem;
+        }
+        .table thead th {
+            font-size: 0.9rem;
+        }
+
+        .diagram-container {
+            padding: 0.5rem;
+        }
+        .diagram-container img {
+            max-height: 400px !important;
+            width: auto;
+            margin: 0 auto;
+            display: block;
+        }
+        .text-muted {
+            font-size: 0.8rem;
+        }
+
+        .btn {
+            font-size: 0.85rem;
+            padding: 0.35rem 0.75rem;
+        }
+
+        .alert {
+            font-size: 0.85rem;
+            padding: 0.75rem;
+        }
+
+        .py-5 {
+            padding-top: 1.5rem !important;
+            padding-bottom: 1.5rem !important;
+        }
+        .py-4 {
+            padding-top: 1rem !important;
+            padding-bottom: 1rem !important;
+        }
+        .mt-5 {
+            margin-top: 1.5rem !important;
+        }
+        .mb-5 {
+            margin-bottom: 1.5rem !important;
+        }
+        .container-fluid.px-5 {
+            padding-left: 1rem !important;
+            padding-right: 1rem !important;
+        }
+
+        .table {
+            font-size: 0.8rem !important;
+        }
+
+        .table thead th {
+            font-size: 0.85rem !important;
+            padding: 0.4rem 0.5rem !important;
+        }
+
+        .table td {
+            padding: 0.4rem 0.5rem !important;
+        }
+
+        .table-responsive {
+            border-radius: 6px; 
+        }
+    }
 </style>
 
 @section('content')
@@ -113,13 +202,13 @@
                         </div>
                         <div class="card-body p-5 text-center">
                             <div class="diagram-container mb-4">
-                                <img src="{{ asset('images/struktur-organisasi.jpg') }}"
+                                <img src="{{ asset('images/struktur-organisasi.png') }}"
                                     alt="Diagram Struktur Organisasi Desa Jetis"
                                     class="img-fluid rounded"
                                     style="max-height: 500px;">
                                 <p class="text-muted mt-3">Gambar 1. Diagram Struktur Organisasi Pemerintah Desa Jetis</p>
                             </div>
-                            <a href="{{ asset('images/struktur-organisasi.jpg') }}"
+                            <a href="{{ asset('images/struktur-organisasi.png') }}"
                                 class="btn btn-success"
                                 download
                                 style="background: linear-gradient(135deg, #0d5e1f 0%, #1a9e3f 100%); border: none;">

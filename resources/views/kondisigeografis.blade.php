@@ -5,19 +5,39 @@
 <style>
     /* Animations */
     @keyframes fadeIn {
-        from { opacity: 0; }
-        to { opacity: 1; }
+        from {
+            opacity: 0;
+        }
+
+        to {
+            opacity: 1;
+        }
     }
 
     @keyframes slideInUp {
-        from { transform: translateY(20px); opacity: 0; }
-        to { transform: translateY(0); opacity: 1; }
+        from {
+            transform: translateY(20px);
+            opacity: 0;
+        }
+
+        to {
+            transform: translateY(0);
+            opacity: 1;
+        }
     }
 
     @keyframes pulse {
-        0% { transform: scale(1); }
-        50% { transform: scale(1.05); }
-        100% { transform: scale(1); }
+        0% {
+            transform: scale(1);
+        }
+
+        50% {
+            transform: scale(1.05);
+        }
+
+        100% {
+            transform: scale(1);
+        }
     }
 
     .animate-fadeIn {
@@ -75,6 +95,21 @@
         color: white;
     }
 
+    .orbitasi-icon {
+        display: flex !important;
+        align-items: center !important;
+        justify-content: center !important;
+        width: 50px !important;
+        height: 50px !important;
+    }
+
+    /* Center icons in circles */
+    .bg-gradient-success.text-white.rounded-circle {
+        display: flex !important;
+        align-items: center !important;
+        justify-content: center !important;
+    }
+
     /* Responsive Adjustments */
     @media (max-width: 768px) {
         .fs-3 {
@@ -83,6 +118,211 @@
 
         .card-body {
             padding: 1.5rem !important;
+        }
+    }
+
+    @media (max-width: 576px) {
+        body {
+            font-size: 0.85rem;
+        }
+
+        .display-5 {
+            font-size: 1.5rem !important;
+        }
+
+        .lead {
+            font-size: 1rem !important;
+        }
+
+        .card-body.p-5 {
+            padding: 1rem !important;
+        }
+
+        .card-header {
+            padding: 0.75rem 1rem;
+        }
+
+        .card-header h4 {
+            font-size: 1.1rem;
+        }
+
+        .table th,
+        .table td {
+            padding: 0.5rem;
+            font-size: 0.85rem;
+        }
+
+        .table thead th {
+            font-size: 0.9rem;
+        }
+
+        .progress-item {
+            margin-bottom: 0.75rem;
+        }
+
+        .progress {
+            height: 8px !important;
+        }
+
+        .col-md-3.mb-4 {
+            margin-bottom: 1rem !important;
+        }
+
+        .p-3.border {
+            padding: 1rem !important;
+        }
+
+        .rounded-circle {
+            width: 50px !important;
+            height: 50px !important;
+        }
+
+        .fa-lg {
+            font-size: 1.25rem !important;
+        }
+
+        .bg-light.p-4 {
+            padding: 1rem !important;
+        }
+
+        .rounded-circle[style*="70px"] {
+            width: 50px !important;
+            height: 50px !important;
+        }
+
+        .fa-2x {
+            font-size: 1.5rem !important;
+        }
+
+        .display-6 {
+            font-size: 1.25rem !important;
+        }
+
+        .orbitasi-item h5 {
+            font-size: 1rem !important;
+        }
+
+        .orbitasi-item .fs-5 {
+            font-size: 1.2rem !important;
+        }
+
+        .orbitasi-item .rounded-circle.p-3 {
+            padding: 0.5rem !important;
+            width: 40px !important;
+            height: 40px !important;
+        }
+
+        .orbitasi-item .fa-lg {
+            font-size: 1rem !important;
+        }
+
+        .py-5 {
+            padding-top: 1.5rem !important;
+            padding-bottom: 1.5rem !important;
+        }
+
+        .py-4 {
+            padding-top: 1rem !important;
+            padding-bottom: 1rem !important;
+        }
+
+        .mt-5 {
+            margin-top: 1.5rem !important;
+        }
+
+        .mb-5 {
+            margin-bottom: 1.5rem !important;
+        }
+
+        .container-fluid.px-5 {
+            padding-left: 1rem !important;
+            padding-right: 1rem !important;
+        }
+
+        .p-4.rounded-3 {
+            padding: 1rem !important;
+        }
+
+        .me-3 {
+            margin-right: 0.75rem !important;
+        }
+
+        .mb-3 {
+            margin-bottom: 0.75rem !important;
+        }
+
+        .total-area-container h3 {
+            font-size: 1.5rem;
+        }
+
+        .total-area-container h5 {
+            font-size: 0.8rem;
+        }
+
+        .bg-gradient-success.text-white.rounded-circle {
+            display: flex !important;
+            align-items: center !important;
+            justify-content: center !important;
+            width: 40px !important;
+            height: 40px !important;
+            padding: 0.5rem !important;
+        }
+
+        .total-area-container h5 {
+            font-size: 0.85rem !important;
+            margin-top: 0.25rem !important;
+        }
+
+        .bg-gradient-success.text-white.rounded-circle i {
+            font-size: 1rem !important;
+        }
+
+        .p-4.rounded-3 {
+            padding: 1rem !important;
+        }
+
+        .card-peta-container {
+            padding-left: 0 !important;
+            padding-right: 0 !important;
+            margin-left: -10px;
+            margin-right: -10px;
+        }
+
+        .card-peta {
+            min-height: 200px !important;
+            width: calc(100% + 20px) !important;
+            margin-left: -10px !important;
+            margin-right: -10px !important;
+            border-radius: 0 !important;
+        }
+
+        .card-peta .card-header {
+            padding: 0.75rem 1.5rem !important;
+            border-radius: 0 !important;
+        }
+
+        .card-peta .card-body {
+            padding: 1rem 1.5rem !important;
+        }
+
+        .card-peta .ratio-16x9 {
+            min-height: 200px !important;
+            margin-left: -1.5rem !important;
+            margin-right: -1.5rem !important;
+            width: calc(100% + 3rem) !important;
+        }
+
+        .card-peta .btn-group {
+            flex-direction: column;
+            gap: 0.75rem !important;
+            margin-left: -0.5rem;
+            margin-right: -0.5rem;
+        }
+
+        .card-peta .btn {
+            width: calc(100% - 1rem) !important;
+            margin: 0 0.5rem !important;
+            padding: 0.6rem !important;
         }
     }
 </style>
@@ -96,7 +336,8 @@
                     <div class="col-lg-10">
                         <h1 class="fw-bold mb-3 display-5" style="color: #0d5e1f;">Kondisi Geografis Desa Jetis</h1>
                         <p class="fw-bold lead" style="color: #1a9e3f;">Profil Wilayah dan Lingkungan Desa</p>
-                        <div class="border-bottom border-success border-2 mx-auto" style="width: 100px; background: linear-gradient(135deg, #0d5e1f 0%, #1a9e3f 100%);"></div>
+                        <div class="border-bottom border-success border-2 mx-auto"
+                            style="width: 100px; background: linear-gradient(135deg, #0d5e1f 0%, #1a9e3f 100%);"></div>
                     </div>
                 </div>
             </section>
@@ -111,13 +352,15 @@
                         <div class="card-body p-5">
                             <div class="row align-items-center mb-5">
                                 <div class="col-md-6 mb-4 mb-md-0">
-                                    <div class="p-4 rounded-3 bg-gradient-light-success border border-success border-opacity-10 h-100">
+                                    <div
+                                        class="p-4 rounded-3 bg-gradient-light-success border border-success border-opacity-10 h-100">
                                         <div class="d-flex align-items-center">
                                             <div class="bg-gradient-success text-white rounded-circle p-3 me-3 shadow-sm">
-                                                <i class="fas fa-map-marked-alt fa-2x"></i>
+                                                <i class="fas fa-map-marked-alt fa-lg"></i>
                                             </div>
-                                            <div>
-                                                <h3 class="mb-0 text-dark fw-bold display-5">112.7395 <span class="fs-4">Ha</span></h3>
+                                            <div class="total-area-container">
+                                                <h3 class="mb-0 text-dark fw-bold display-5">112.7395 <span
+                                                        class="fs-4">Ha</span></h3>
                                                 <h5 class="text-dark fw-bold mt-2">Total Luas Desa</h5>
                                             </div>
                                         </div>
@@ -134,7 +377,8 @@
                                                     <span class="fw-bold" style="color: #0d5e1f;">66.1%</span>
                                                 </div>
                                                 <div class="progress" style="height: 10px;">
-                                                    <div class="progress-bar progress-bar-success" role="progressbar" style="width: 66.1%"></div>
+                                                    <div class="progress-bar progress-bar-success" role="progressbar"
+                                                        style="width: 66.1%"></div>
                                                 </div>
                                             </div>
                                             <div class="progress-item mb-2">
@@ -143,7 +387,8 @@
                                                     <span class="fw-bold" style="color: #0d5e1f;">25.2%</span>
                                                 </div>
                                                 <div class="progress" style="height: 10px;">
-                                                    <div class="progress-bar progress-bar-success" role="progressbar" style="width: 25.2%"></div>
+                                                    <div class="progress-bar progress-bar-success" role="progressbar"
+                                                        style="width: 25.2%"></div>
                                                 </div>
                                             </div>
                                             <div class="progress-item">
@@ -152,7 +397,8 @@
                                                     <span class="fw-bold" style="color: #0d5e1f;">8.7%</span>
                                                 </div>
                                                 <div class="progress" style="height: 10px;">
-                                                    <div class="progress-bar progress-bar-success" role="progressbar" style="width: 8.7%"></div>
+                                                    <div class="progress-bar progress-bar-success" role="progressbar"
+                                                        style="width: 8.7%"></div>
                                                 </div>
                                             </div>
                                         </div>
@@ -163,7 +409,8 @@
                             <!-- Detail Luas -->
                             <div class="row">
                                 <div class="col-12">
-                                    <h5 class="fw-bold mb-3" style="color: #0d5e1f;"><i class="fas fa-layer-group me-2"></i>Detail Luas Lahan</h5>
+                                    <h5 class="fw-bold mb-3" style="color: #0d5e1f;"><i
+                                            class="fas fa-layer-group me-2"></i>Detail Luas Lahan</h5>
                                     <div class="table-responsive">
                                         <table class="table table-hover align-middle">
                                             <thead class="table-success">
@@ -210,13 +457,81 @@
                                 </div>
                             </div>
 
+                            <div class="row justify-content-center mt-3 card-peta-container">
+                                <div class="col-12">
+                                    <div class="row">
+                                        <!-- Peta Batas Administrasi RT/RW -->
+                                        <div class="col-md-6 mb-4">
+                                            <div class="card border-0 shadow-sm animate-slideInUp card-peta"
+                                                style="animation-delay: 0.6s; min-height: 500px;">
+                                                <div class="card-header text-white py-3">
+                                                    <h4 class="mb-0 fw-bold"><i class="fas fa-map me-2"></i>Peta Batas
+                                                        Administrasi RT/RW</h4>
+                                                </div>
+                                                <div class="card-body p-4 d-flex flex-column">
+                                                    <div class="ratio ratio-16x9 mb-3 flex-grow-1">
+                                                        <iframe
+                                                            src="https://drive.google.com/file/d/1mriCMtBT-6NuXCKYci8uyodx9aRg0onX/preview"
+                                                            frameborder="0" allow="autoplay"
+                                                            class="rounded-3 h-100 w-100"></iframe>
+                                                    </div>
+                                                    <div class="d-flex gap-2 mt-auto btn-group">
+                                                        <a href="https://drive.google.com/file/d/1mriCMtBT-6NuXCKYci8uyodx9aRg0onX/view"
+                                                            target="_blank"
+                                                            class="btn btn-success flex-grow-1 bg-gradient-success border-0">
+                                                            <i class="fas fa-expand me-2"></i>Buka Fullscreen
+                                                        </a>
+                                                        <a href="https://drive.google.com/uc?export=download&id=1mriCMtBT-6NuXCKYci8uyodx9aRg0onX"
+                                                            class="btn btn-outline-success flex-grow-1">
+                                                            <i class="fas fa-download me-2"></i>Unduh
+                                                        </a>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <!-- Peta Jaringan Jalan -->
+                                        <div class="col-md-6 mb-4">
+                                            <div class="card border-0 shadow-sm animate-slideInUp card-peta"
+                                                style="animation-delay: 0.8s; min-height: 500px;">
+                                                <div class="card-header text-white py-3">
+                                                    <h4 class="mb-0 fw-bold"><i class="fas fa-road me-2"></i>Peta Jaringan
+                                                        Jalan & Fasilitas Umum</h4>
+                                                </div>
+                                                <div class="card-body p-4 d-flex flex-column">
+                                                    <div class="ratio ratio-16x9 mb-3 flex-grow-1">
+                                                        <iframe
+                                                            src="https://drive.google.com/file/d/1A6pRNpNH3m-SBN1p4bSdPyQowO7Ff52b/preview"
+                                                            frameborder="0" allow="autoplay"
+                                                            class="rounded-3 h-100 w-100"></iframe>
+                                                    </div>
+                                                    <div class="d-flex gap-2 mt-auto btn-group">
+                                                        <a href="https://drive.google.com/file/d/1A6pRNpNH3m-SBN1p4bSdPyQowO7Ff52b/view"
+                                                            target="_blank"
+                                                            class="btn btn-success flex-grow-1 bg-gradient-success border-0">
+                                                            <i class="fas fa-expand me-2"></i>Buka Fullscreen
+                                                        </a>
+                                                        <a href="https://drive.google.com/uc?export=download&id=1A6pRNpNH3m-SBN1p4bSdPyQowO7Ff52b"
+                                                            class="btn btn-outline-success flex-grow-1">
+                                                            <i class="fas fa-download me-2"></i>Unduh
+                                                        </a>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
                             <!-- Batas Wilayah -->
                             <div class="mt-5">
-                                <h5 class="fw-bold mb-4" style="color: #0d5e1f;"><i class="fas fa-border-all me-2"></i>Batas Wilayah</h5>
+                                <h5 class="fw-bold mb-4" style="color: #0d5e1f;"><i
+                                        class="fas fa-border-all me-2"></i>Batas Wilayah</h5>
                                 <div class="row text-center">
                                     <div class="col-md-3 mb-4">
                                         <div class="p-3 border border-success border-2 rounded-3 h-100">
-                                            <div class="bg-gradient-light-success text-success rounded-circle d-inline-flex align-items-center justify-content-center mb-2 animate-pulse" style="width: 60px; height: 60px;">
+                                            <div class="bg-gradient-light-success text-success rounded-circle d-inline-flex align-items-center justify-content-center mb-2 animate-pulse"
+                                                style="width: 60px; height: 60px;">
                                                 <i class="fas fa-arrow-up fa-lg"></i>
                                             </div>
                                             <h6 class="fw-bold" style="color: #0d5e1f;">Sebelah Utara</h6>
@@ -225,7 +540,8 @@
                                     </div>
                                     <div class="col-md-3 mb-4">
                                         <div class="p-3 border border-success border-2 rounded-3 h-100">
-                                            <div class="bg-gradient-light-success text-success rounded-circle d-inline-flex align-items-center justify-content-center mb-2 animate-pulse" style="width: 60px; height: 60px;">
+                                            <div class="bg-gradient-light-success text-success rounded-circle d-inline-flex align-items-center justify-content-center mb-2 animate-pulse"
+                                                style="width: 60px; height: 60px;">
                                                 <i class="fas fa-arrow-down fa-lg"></i>
                                             </div>
                                             <h6 class="fw-bold" style="color: #0d5e1f;">Sebelah Selatan</h6>
@@ -234,7 +550,8 @@
                                     </div>
                                     <div class="col-md-3 mb-4">
                                         <div class="p-3 border border-success border-2 rounded-3 h-100">
-                                            <div class="bg-gradient-light-success text-success rounded-circle d-inline-flex align-items-center justify-content-center mb-2 animate-pulse" style="width: 60px; height: 60px;">
+                                            <div class="bg-gradient-light-success text-success rounded-circle d-inline-flex align-items-center justify-content-center mb-2 animate-pulse"
+                                                style="width: 60px; height: 60px;">
                                                 <i class="fas fa-arrow-left fa-lg"></i>
                                             </div>
                                             <h6 class="fw-bold" style="color: #0d5e1f;">Sebelah Barat</h6>
@@ -243,7 +560,8 @@
                                     </div>
                                     <div class="col-md-3 mb-4">
                                         <div class="p-3 border border-success border-2 rounded-3 h-100">
-                                            <div class="bg-gradient-light-success text-success rounded-circle d-inline-flex align-items-center justify-content-center mb-2 animate-pulse" style="width: 60px; height: 60px;">
+                                            <div class="bg-gradient-light-success text-success rounded-circle d-inline-flex align-items-center justify-content-center mb-2 animate-pulse"
+                                                style="width: 60px; height: 60px;">
                                                 <i class="fas fa-arrow-right fa-lg"></i>
                                             </div>
                                             <h6 class="fw-bold" style="color: #0d5e1f;">Sebelah Timur</h6>
@@ -269,7 +587,8 @@
                                 <!-- Ketinggian -->
                                 <div class="col-md-6 col-lg-3">
                                     <div class="bg-light p-4 rounded-3 h-100 text-center">
-                                        <div class="bg-gradient-light-success text-success rounded-circle d-inline-flex align-items-center justify-content-center mb-3 animate-pulse" style="width: 70px; height: 70px;">
+                                        <div class="bg-gradient-light-success text-success rounded-circle d-inline-flex align-items-center justify-content-center mb-3 animate-pulse"
+                                            style="width: 70px; height: 70px;">
                                             <i class="fas fa-chart-line fa-2x"></i>
                                         </div>
                                         <h5 class="fw-bold mb-2" style="color: #0d5e1f;">Ketinggian Tanah</h5>
@@ -281,7 +600,8 @@
                                 <!-- Curah Hujan -->
                                 <div class="col-md-6 col-lg-3">
                                     <div class="bg-light p-4 rounded-3 h-100 text-center">
-                                        <div class="bg-gradient-light-success text-success rounded-circle d-inline-flex align-items-center justify-content-center mb-3 animate-pulse" style="animation-delay: 0.2s; width: 70px; height: 70px;">
+                                        <div class="bg-gradient-light-success text-success rounded-circle d-inline-flex align-items-center justify-content-center mb-3 animate-pulse"
+                                            style="animation-delay: 0.2s; width: 70px; height: 70px;">
                                             <i class="fas fa-cloud-rain fa-2x"></i>
                                         </div>
                                         <h5 class="fw-bold mb-2" style="color: #0d5e1f;">Curah Hujan</h5>
@@ -293,7 +613,8 @@
                                 <!-- Topografi -->
                                 <div class="col-md-6 col-lg-3">
                                     <div class="bg-light p-4 rounded-3 h-100 text-center">
-                                        <div class="bg-gradient-light-success text-success rounded-circle d-inline-flex align-items-center justify-content-center mb-3 animate-pulse" style="animation-delay: 0.4s; width: 70px; height: 70px;">
+                                        <div class="bg-gradient-light-success text-success rounded-circle d-inline-flex align-items-center justify-content-center mb-3 animate-pulse"
+                                            style="animation-delay: 0.4s; width: 70px; height: 70px;">
                                             <i class="fas fa-layer-group fa-2x"></i>
                                         </div>
                                         <h5 class="fw-bold mb-2" style="color: #0d5e1f;">Topografi</h5>
@@ -304,7 +625,8 @@
                                 <!-- Suhu Udara -->
                                 <div class="col-md-6 col-lg-3">
                                     <div class="bg-light p-4 rounded-3 h-100 text-center">
-                                        <div class="bg-gradient-light-success text-success rounded-circle d-inline-flex align-items-center justify-content-center mb-3 animate-pulse" style="animation-delay: 0.6s; width: 70px; height: 70px;">
+                                        <div class="bg-gradient-light-success text-success rounded-circle d-inline-flex align-items-center justify-content-center mb-3 animate-pulse"
+                                            style="animation-delay: 0.6s; width: 70px; height: 70px;">
                                             <i class="fas fa-temperature-high fa-2x"></i>
                                         </div>
                                         <h5 class="fw-bold mb-2" style="color: #0d5e1f;">Suhu Udara</h5>
@@ -323,15 +645,16 @@
                 <div class="col-lg-11">
                     <div class="card border-0 shadow-sm animate-slideInUp" style="animation-delay: 0.4s;">
                         <div class="card-header text-white py-3">
-                            <h4 class="mb-0 fw-bold"><i class="fas fa-map-marked-alt me-2"></i>Orbitasi (Jarak dari Pusat Pemerintahan)</h4>
+                            <h4 class="mb-0 fw-bold"><i class="fas fa-map-marked-alt me-2"></i>Orbitasi (Jarak dari Pusat
+                                Pemerintahan)</h4>
                         </div>
                         <div class="card-body p-5">
                             <div class="row g-4">
                                 <!-- Kecamatan -->
                                 <div class="col-md-4">
-                                    <div class="d-flex align-items-center bg-light p-4 rounded-3 h-100">
+                                    <div class="d-flex align-items-center bg-light p-4 rounded-3 h-100 orbitasi-item">
                                         <div class="flex-shrink-0 me-4">
-                                            <div class="bg-gradient-success text-white rounded-circle p-3">
+                                            <div class="bg-gradient-success text-white rounded-circle p-3 orbitasi-icon">
                                                 <i class="fas fa-building fa-lg"></i>
                                             </div>
                                         </div>
@@ -344,9 +667,9 @@
 
                                 <!-- Kabupaten -->
                                 <div class="col-md-4">
-                                    <div class="d-flex align-items-center bg-light p-4 rounded-3 h-100">
+                                    <div class="d-flex align-items-center bg-light p-4 rounded-3 h-100 orbitasi-item">
                                         <div class="flex-shrink-0 me-4">
-                                            <div class="bg-gradient-success text-white rounded-circle p-3">
+                                            <div class="bg-gradient-success text-white rounded-circle p-3 orbitasi-icon">
                                                 <i class="fas fa-city fa-lg"></i>
                                             </div>
                                         </div>
@@ -359,9 +682,9 @@
 
                                 <!-- Provinsi -->
                                 <div class="col-md-4">
-                                    <div class="d-flex align-items-center bg-light p-4 rounded-3 h-100">
+                                    <div class="d-flex align-items-center bg-light p-4 rounded-3 h-100 orbitasi-item">
                                         <div class="flex-shrink-0 me-4">
-                                            <div class="bg-gradient-success text-white rounded-circle p-3">
+                                            <div class="bg-gradient-success text-white rounded-circle p-3 orbitasi-icon">
                                                 <i class="fas fa-flag fa-lg"></i>
                                             </div>
                                         </div>
@@ -374,9 +697,9 @@
 
                                 <!-- Negara -->
                                 <div class="col-12 mt-4">
-                                    <div class="d-flex align-items-center bg-light p-4 rounded-3">
+                                    <div class="d-flex align-items-center bg-light p-4 rounded-3 orbitasi-item">
                                         <div class="flex-shrink-0 me-4">
-                                            <div class="bg-gradient-success text-white rounded-circle p-3">
+                                            <div class="bg-gradient-success text-white rounded-circle p-3 orbitasi-icon">
                                                 <i class="fas fa-globe-asia fa-lg"></i>
                                             </div>
                                         </div>

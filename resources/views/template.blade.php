@@ -53,7 +53,54 @@
         .navbar-brand .desa-name {
             font-family: 'Poppins', sans-serif;
             font-weight: 700;
-            margin-left: 10px;
+            margin-left: 15px;
+        }
+
+        @media (max-width: 768px) {
+            .navbar-brand img {
+                height: 40px;
+                margin-left: 1rem;
+            }
+
+            .navbar-brand .desa-name {
+                font-size: 1.2rem;
+                margin-right: 1rem;
+            }
+
+            .navbar {
+                padding: 10px 0;
+            }
+
+            .nav-link {
+                font-size: 0.9rem;
+                padding: 8px 10px;
+            }
+
+            .navbar-toggler {
+                margin-right: 1rem;
+            }
+
+            .dropdown-item {
+                font-size: 0.9rem;
+            }
+
+            .auth-buttons {
+                margin-left: 1rem;
+            }
+
+            .login-btn,
+            .logout-btn {
+                padding: 0.4rem 1rem;
+                font-size: 0.85rem;
+            }
+
+            footer h5 {
+                font-size: 0.8rem;
+            }
+
+            footer p {
+                font-size: 0.7rem;
+            }
         }
 
         .nav-link {
@@ -107,6 +154,43 @@
         .dropdown-item:hover {
             background-color: rgba(46, 125, 50, 0.1) !important;
             color: #2e7d32 !important;
+        }
+
+        .auth-buttons {
+            display: flex;
+            align-items: center;
+            margin-left: 1.5rem;
+            height: 100%;
+        }
+
+        .login-btn,
+        .logout-btn {
+            font-weight: 500;
+            line-height: normal;
+            padding: 0.5rem 1.25rem;
+            font-size: 0.9rem;
+            border-radius: 0.25rem;
+            transition: all 0.2s ease;
+        }
+
+        .login-btn {
+            background-color: #2e7d32;
+            border-color: #2e7d32;
+        }
+
+        .login-btn:hover {
+            background-color: #1b5e20;
+            border-color: #1b5e20;
+        }
+
+        .logout-btn {
+            color: #dc3545;
+            border-color: #dc3545;
+        }
+
+        .logout-btn:hover {
+            background-color: #dc3545;
+            color: white;
         }
     </style>
 </head>
@@ -178,18 +262,16 @@
                     </li>
                 </ul>
 
-                <div class="d-flex align-items-center ms-4" style="height: 100%;">
+                <div class="auth-buttons">
                     @auth
                         <form method="POST" action="{{ route('logout') }}">
                             @csrf
-                            <button type="submit" class="btn btn-outline-danger me-2"
-                                style="padding: 8px 20px; font-weight: 500; line-height: normal;">
+                            <button type="submit" class="btn btn-outline-danger logout-btn">
                                 <i class="fas fa-sign-out-alt me-2"></i> Logout
                             </button>
                         </form>
                     @else
-                        <a href="{{ url('login') }}" class="btn btn-success me-2"
-                            style="padding: 8px 20px; font-weight: 500; line-height: normal;">
+                        <a href="{{ url('login') }}" class="btn btn-success login-btn">
                             <i class="fas fa-sign-in-alt me-2"></i> Login
                         </a>
                     @endauth

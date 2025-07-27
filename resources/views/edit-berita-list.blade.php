@@ -5,8 +5,13 @@
 <style>
     /* Animation */
     @keyframes fadeIn {
-        from { opacity: 0; }
-        to { opacity: 1; }
+        from {
+            opacity: 0;
+        }
+
+        to {
+            opacity: 1;
+        }
     }
 
     /* Table Styles */
@@ -96,48 +101,89 @@
         height: 3px;
         background: linear-gradient(135deg, #0d5e1f 0%, #1a9e3f 100%);
     }
+
+    @media (max-width: 578px) {
+        .page-header {
+            font-size: 1.5rem;
+        }
+
+        .news-table {
+            font-size: 0.85rem;
+        }
+
+        .table-responsive {
+            width: 100%;
+            overflow-x: auto;
+        }
+
+        .news-table thead th,
+        .news-table tbody td {
+            padding: 0.75rem 0.5rem;
+        }
+
+        .btn-action {
+            padding: 0.25rem 0.5rem;
+            font-size: 0.75rem;
+        }
+
+        td {
+            white-space: nowrap;
+        }
+
+        .page-header:after {
+            width: 60px;
+            height: 2px;
+        }
+
+        .container-fluid {
+            padding-left: 15px;
+            padding-right: 15px;
+        }
+    }
 </style>
 
 @section('content')
-<div class="py-5 bg-light">
-    <div class="container-fluid px-5">
-        <h2 class="text-center page-header">Daftar Berita Desa Jetis</h2>
+    <div class="py-5 bg-light">
+        <div class="container-fluid px-5">
+            <h2 class="text-center page-header">Daftar Berita Desa Jetis</h2>
 
-        @if(session('success'))
-            <div class="alert alert-success mb-4">
-                <i class="fas fa-check-circle me-2"></i>{{ session('success') }}
+            @if (session('success'))
+                <div class="alert alert-success mb-4">
+                    <i class="fas fa-check-circle me-2"></i>{{ session('success') }}
+                </div>
+            @endif
+
+            <div class="table-responsive news-table">
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th>No</th>
+                            <th>Judul Berita</th>
+                            <th>Tanggal Publikasi</th>
+                            <th>Aksi</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach ($beritas as $index => $berita)
+                            <tr>
+                                <td>{{ $index + 1 }}</td>
+                                <td>{{ $berita->judul }}</td>
+                                <td>{{ $berita->tanggal_formatted }}</td>
+                                <td>
+                                    <a href="{{ route('berita.edit', $berita->id) }}" class="btn btn-sm btn-primary">Edit</a>
+                                    <form action="{{ route('berita.destroy', $berita->id) }}" method="POST"
+                                        class="d-inline">
+                                        @csrf
+                                        @method('DELETE')
+                                        <button type="submit" class="btn btn-sm btn-danger"
+                                            onclick="return confirm('Apakah Anda yakin ingin menghapus berita ini?')">Hapus</button>
+                                    </form>
+                                </td>
+                            </tr>
+                        @endforeach
+                    </tbody>
+                </table>
             </div>
-        @endif
-
-        <div class="table-responsive news-table">
-            <table class="table">
-                <thead>
-                    <tr>
-                        <th>No</th>
-                        <th>Judul Berita</th>
-                        <th>Tanggal Publikasi</th>
-                        <th>Aksi</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    @foreach($beritas as $index => $berita)
-                    <tr>
-                        <td>{{ $index + 1 }}</td>
-                        <td>{{ $berita->judul }}</td>
-                        <td>{{ $berita->tanggal_formatted }}</td>
-                        <td>
-                            <a href="{{ route('berita.edit', $berita->id) }}" class="btn btn-sm btn-primary">Edit</a>
-                        <form action="{{ route('berita.destroy', $berita->id) }}" method="POST" class="d-inline">
-                            @csrf
-                            @method('DELETE')
-                            <button type="submit" class="btn btn-sm btn-danger" onclick="return confirm('Apakah Anda yakin ingin menghapus berita ini?')">Hapus</button>
-                        </form>
-                        </td>
-                    </tr>
-                    @endforeach
-                </tbody>
-            </table>
         </div>
     </div>
-</div>
 @endsection

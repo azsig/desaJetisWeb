@@ -105,6 +105,71 @@
         border-radius: 5px;
         overflow: hidden;
     }
+
+    /* Mobile Responsiveness - Tambah Berita */
+    @media (max-width: 578px) {
+        .container-fluid.px-5 {
+            padding-left: 1rem !important;
+            padding-right: 1rem !important;
+        }
+
+        .card-body.p-5 {
+            padding: 1.5rem !important;
+        }
+
+        .card-header.py-4.px-5 {
+            padding: 1rem !important;
+        }
+
+        .card-header h4 {
+            font-size: 1.2rem !important;
+        }
+
+        .form-label {
+            font-size: 0.95rem;
+        }
+
+        .form-control {
+            font-size: 0.9rem;
+            padding: 0.6rem;
+        }
+
+        .btn {
+            font-size: 0.9rem;
+            padding: 0.6rem 1rem;
+        }
+
+        .ckeditor-container {
+            height: 250px !important;
+        }
+
+        .col-lg-15 {
+            width: 100%;
+            padding-left: 0;
+            padding-right: 0;
+        }
+
+        .d-flex.justify-content-end.gap-3 {
+            flex-direction: column;
+            gap: 0.75rem !important;
+        }
+
+        .btn {
+            width: 100%;
+        }
+
+        .alert-danger {
+            font-size: 0.9rem;
+        }
+
+        .alert-danger h5 {
+            font-size: 1rem;
+        }
+
+        .form-text {
+            font-size: 0.8rem;
+        }
+    }
 </style>
 
 @section('content')
@@ -113,7 +178,8 @@
             <div class="row justify-content-center">
                 <div class="col-lg-15">
                     <div class="news-card">
-                        <div class="card-header py-4 px-5" style="background: linear-gradient(135deg, #0d5e1f 0%, #1a9e3f 100%);">
+                        <div class="card-header py-4 px-5"
+                            style="background: linear-gradient(135deg, #0d5e1f 0%, #1a9e3f 100%);">
                             <div class="d-flex align-items-center">
                                 <i class="fas fa-newspaper me-3" style="font-size: 1.5rem; color: #ffffff"></i>
                                 <h4 class="mb-0" style="font-size: 1.5rem; color: #ffffff; font-weight: 600">Tambah Berita

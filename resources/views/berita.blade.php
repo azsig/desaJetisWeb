@@ -5,13 +5,25 @@
 <style>
     /* Animations */
     @keyframes fadeIn {
-        from { opacity: 0; }
-        to { opacity: 1; }
+        from {
+            opacity: 0;
+        }
+
+        to {
+            opacity: 1;
+        }
     }
 
     @keyframes slideInUp {
-        from { transform: translateY(20px); opacity: 0; }
-        to { transform: translateY(0); opacity: 1; }
+        from {
+            transform: translateY(20px);
+            opacity: 0;
+        }
+
+        to {
+            transform: translateY(0);
+            opacity: 1;
+        }
     }
 
     /* Gradient Colors */
@@ -88,6 +100,48 @@
             height: 150px;
         }
     }
+
+    @media (max-width: 576px) {
+        .hero-title,
+        .display-5 {
+            font-size: 2rem !important;
+        }
+
+        .lead {
+            font-size: 1.1rem !important;
+        }
+
+        .card-title {
+            font-size: 1.1rem;
+        }
+
+        .card-text {
+            font-size: 0.9rem;
+        }
+
+        .btn-sm {
+            font-size: 0.8rem;
+        }
+
+        .col-md-6 {
+            flex: 0 0 100%;
+            max-width: 100%;
+        }
+
+        .card-img-top {
+            height: 180px;
+        }
+
+        .container-fluid.px-5 {
+            padding-left: 1.5rem !important;
+            padding-right: 1.5rem !important;
+        }
+
+        .hero-title:after {
+            width: 60px;
+            bottom: -5px;
+        }
+    }
 </style>
 
 @section('content')
@@ -99,7 +153,8 @@
                     <div class="col-lg-10">
                         <h1 class="fw-bold mb-3 display-5" style="color: #0d5e1f;">Berita Desa Jetis</h1>
                         <p class="fw-bold lead" style="color: #1a9e3f;">Informasi Terkini Kegiatan dan Perkembangan Desa</p>
-                        <div class="border-bottom border-success border-2 mx-auto" style="width: 100px; background: linear-gradient(135deg, #0d5e1f 0%, #1a9e3f 100%);"></div>
+                        <div class="border-bottom border-success border-2 mx-auto"
+                            style="width: 100px; background: linear-gradient(135deg, #0d5e1f 0%, #1a9e3f 100%);"></div>
                     </div>
                 </div>
             </section>
@@ -109,7 +164,8 @@
                 <div class="col-lg-11">
                     <div class="row">
                         @foreach ($beritas as $berita)
-                            <div class="col-md-6 col-lg-4 mb-4 animate-slideInUp" style="animation-delay: {{ $loop->index * 0.1 }}s;">
+                            <div class="col-md-6 col-lg-4 mb-4 animate-slideInUp"
+                                style="animation-delay: {{ $loop->index * 0.1 }}s;">
                                 <div class="card h-100 shadow-sm">
                                     @if ($berita->gambar_thumbnail)
                                         <img src="{{ $berita->gambar_thumbnail }}" alt="{{ $berita->judul }}"
@@ -131,7 +187,8 @@
                                                 <i class="far fa-calendar-alt me-1" style="color: #0d5e1f;"></i>
                                                 {{ \Carbon\Carbon::parse($berita->tanggal)->isoFormat('D MMMM Y') }}
                                             </p>
-                                            <a href="{{ route('berita.detail', $berita->id) }}" class="btn btn-outline-success btn-sm">
+                                            <a href="{{ route('berita.detail', $berita->id) }}"
+                                                class="btn btn-outline-success btn-sm">
                                                 Baca Selengkapnya <i class="fas fa-arrow-right ms-1"></i>
                                             </a>
                                         </div>

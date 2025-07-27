@@ -78,6 +78,62 @@
             padding: 10px;
         }
     }
+
+    @media (max-width: 576px) {
+        body {
+            font-size: 0.85rem;
+        }
+
+        .display-5 {
+            font-size: 1.5rem !important;
+        }
+        .lead {
+            font-size: 1rem !important;
+        }
+
+        .card-body {
+            padding: 1rem !important;
+        }
+        .card-header {
+            padding: 0.75rem 1rem;
+        }
+        .card-header h4 {
+            font-size: 1.1rem;
+        }
+
+        .chart-container {
+            padding: 0.5rem !important;
+            height: 280px !important;
+        }
+
+        .alert {
+            font-size: 0.85rem;
+            padding: 0.75rem;
+        }
+
+        .py-5 {
+            padding-top: 1.5rem !important;
+            padding-bottom: 1.5rem !important;
+        }
+        .py-4 {
+            padding-top: 1rem !important;
+            padding-bottom: 1rem !important;
+        }
+        .mt-5 {
+            margin-top: 1.5rem !important;
+        }
+        .mb-4 {
+            margin-bottom: 1rem !important;
+        }
+        .container-fluid.px-5 {
+            padding-left: 1rem !important;
+            padding-right: 1rem !important;
+        }
+
+        .chartjs-legend {
+            font-size: 0.8rem !important;
+        }
+    }
 </style>
 
 @section('content')

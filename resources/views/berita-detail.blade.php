@@ -3,25 +3,6 @@
 @section('title', 'Detail Berita')
 
 <style>
-    /* Reusing the same animations and styles from visi misi */
-    @keyframes fadeIn {
-        from { opacity: 0; }
-        to { opacity: 1; }
-    }
-
-    @keyframes slideInUp {
-        from { transform: translateY(20px); opacity: 0; }
-        to { transform: translateY(0); opacity: 1; }
-    }
-
-    .animate-fadeIn {
-        animation: fadeIn 1s ease-out;
-    }
-
-    .animate-slideInUp {
-        animation: slideInUp 0.8s ease-out;
-    }
-
     /* Gradient Colors */
     .bg-gradient-success {
         background: linear-gradient(135deg, #0d5e1f 0%, #1a9e3f 100%);
@@ -99,6 +80,54 @@
             font-size: 1rem;
         }
     }
+
+    @media (max-width: 768px) {
+        .news-content {
+            font-size: 1rem;
+        }
+    }
+
+    @media (max-width: 578px) {
+        .container-fluid.px-5 {
+            padding-left: 15px !important;
+            padding-right: 15px !important;
+        }
+
+        .col-lg-8 {
+            flex: 0 0 100%;
+            max-width: 100%;
+            padding-left: 10px;
+            padding-right: 10px;
+        }
+
+        .col-lg-4 {
+            flex: 0 0 100%;
+            max-width: 100%;
+            padding-left: 10px;
+            padding-right: 10px;
+        }
+
+        h1 {
+            font-size: 1.3rem !important;
+        }
+
+        .news-content {
+            font-size: 0.9rem !important;
+        }
+
+        .card-body.p-4.p-lg-5 {
+            padding: 1.5rem !important;
+        }
+
+        .related-news-item h6 {
+            font-size: 0.95rem;
+        }
+
+        .date-badge {
+            padding: 0.3rem 0.8rem;
+            font-size: 0.8rem;
+        }
+    }
 </style>
 
 @section('content')
@@ -107,7 +136,7 @@
             <!-- News Content -->
             <div class="row justify-content-center mt-5">
                 <div class="col-lg-8">
-                    <div class="card border-0 shadow-sm mb-5 animate-slideInUp">
+                    <div class="card border-0 shadow-sm mb-5">
                         <div class="card-body p-4 p-lg-5">
                             <h1 class="mb-4 fw-bold" style="color: #000000;">{{ $berita->judul }}</h1>
 
@@ -134,7 +163,7 @@
 
                 <!-- Related News Sidebar -->
                 <div class="col-lg-4">
-                    <div class="card border-0 shadow-sm animate-slideInUp" style="animation-delay: 0.2s;">
+                    <div class="card border-0 shadow-sm">
                         <div class="card-header text-white py-3">
                             <h5 class="mb-0 fw-bold"><i class="fas fa-newspaper me-2"></i>Berita Terbaru</h5>
                         </div>
@@ -142,7 +171,8 @@
                             @foreach ($beritaTerbaru as $item)
                                 <div class="related-news-item mb-3">
                                     <h6 class="fw-bold">
-                                        <a href="{{ route('berita.detail', $item->id) }}" class="text-dark text-decoration-none">
+                                        <a href="{{ route('berita.detail', $item->id) }}"
+                                            class="text-dark text-decoration-none">
                                             {{ Str::limit($item->judul, 50) }}
                                         </a>
                                     </h6>
